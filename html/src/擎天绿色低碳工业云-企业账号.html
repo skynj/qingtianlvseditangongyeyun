@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>擎天绿色低碳工业云</title>
+		<link href="css/layout/reset.css" rel="stylesheet" type="text/css">
+		<link href="css/layout/base.css" rel="stylesheet" type="text/css">
+		<link href="../plugins/perfect-scrollbar.min.css" rel="stylesheet" type="text/css">
+		<link href="../plugins/swiper.min.css" rel="stylesheet" type="text/css">
+		<link href="css/master_lj.css" rel="stylesheet" type="text/css">
+		<link href="css/master_zt.css" rel="stylesheet" type="text/css">
+		<link href="css/master_wy.css" rel="stylesheet" type="text/css">
+		<link href="css/debug.css" rel="stylesheet" type="text/css">
+	</head>
+	<body ng-app='app_qt' ng-controller='qtCtrl'>
+		<div class="content" ng-controller='qtCtrlS'>
+			<topn-qt nav-data='topData' sec-data='secData' more-data='moreData'></topn-qt>
+			<topb-qt app-data='appData' banner-data='bannerData'></topb-qt>
+			<div class="qt_center">
+				<div class="innerBlock">
+					<div class="main">
+						<div class="typeArea clearfix">
+							<div class="serMain setRoleMain">
+								<div class="setRoleHead">
+									<span>企业账号</span>
+									<div class="redact" style="position: absolute;top: 18px;right: 142px;">角色设置</div>
+									<div class="redact newAdd" style="position: absolute;top: 18px;right: 30px;">
+										<div class="icon-newAdd"></div>新增员工
+									</div>
+								</div>
+								<div class="setRoleTable" >
+									<table>
+										<thead>
+										<tr>
+											<th width="5%" >访问</th>
+											<th width="25%" align="left">员工目录</th>
+											<th width="24%" align="left">账号</th>
+											<th width="26%" align="left">角色</th>
+											<th >操作</th>
+										</tr>
+										</thead>
+										<tbody>
+										<tr>
+											<td>01</td>
+											<td>萨尔</td>
+											<td>17566665555</td>
+											<td>采集员</td>
+											<td align="center">
+												<a href="javascript:;">查看</a>
+												<a href="javascript:;">重置密码</a>
+												<a href="javascript:;">删除</a>
+											</td>
+										</tr>
+										<tr>
+											<td>02</td>
+											<td>萨尔</td>
+											<td>17566665555</td>
+											<td>采集员</td>
+											<td align="center">
+												<a href="javascript:;">查看</a>
+												<a href="javascript:;">重置密码</a>
+												<a href="javascript:;">删除</a>
+											</td>
+										</tr>
+										<tr>
+											<td>03</td>
+											<td>萨尔</td>
+											<td>17566665555</td>
+											<td>采集员</td>
+											<td align="center">
+												<a href="javascript:;">查看</a>
+												<a href="javascript:;">重置密码</a>
+												<a href="javascript:;">删除</a>
+											</td>
+										</tr>
+										<tr>
+											<td>04</td>
+											<td>萨尔</td>
+											<td>17566665555</td>
+											<td>采集员</td>
+											<td align="center">
+												<a href="javascript:;">查看</a>
+												<a href="javascript:;">重置密码</a>
+												<a href="javascript:;">删除</a>
+											</td>
+										</tr>
+										<tr>
+											<td>05</td>
+											<td>萨尔</td>
+											<td>17566665555</td>
+											<td>采集员</td>
+											<td align="center">
+												<a href="javascript:;">查看</a>
+												<a href="javascript:;">重置密码</a>
+												<a href="javascript:;">删除</a>
+											</td>
+										</tr>
+										<tr>
+											<td>06</td>
+											<td>萨尔</td>
+											<td>17566665555</td>
+											<td>采集员</td>
+											<td align="center">
+												<a href="javascript:;">查看</a>
+												<a href="javascript:;">重置密码</a>
+												<a href="javascript:;">删除</a>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="setRolePage">
+									<div class="currentFinancing">
+										当前融资纪录 共 <strong>40</strong> 人
+									</div>
+									<div class="cp_pagination" style="float: right;">
+										<ul>
+											<li class="cp_pgLeft"></li>
+											<li class="cp_num active">1</li>
+											<li title="向前5页" class="cp_pgLess"></li>
+											<li class="cp_num">2</li>
+											<li class="cp_num">3</li>
+											<li class="cp_num">4</li>
+											<li class="cp_num">5</li>
+											<li class="cp_num">6</li>
+											<li title="向后5页" class="cp_pgMore"></li>
+											<li class="cp_num">16</li>
+											<li class="cp_pgRight active"></li>
+										</ul>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="rightLink">
+				<div class="consult">
+					<i></i>咨询电话
+				</div>
+				<div class="backtop"></div>
+			</div>
+			<bottom-qt></bottom-qt>
+		</div>
+		<script src="../plugins/jquery-1.9.1.min.js"></script>
+		<script src="../plugins/perfect-scrollbar.jquery.js"></script>
+		<script src="../plugins/swiper.min.js"></script>
+		<script src="../plugins/angular.min.js"></script>
+		<script src="js/base.js"></script>
+		<script src="js/master.js"></script>
+		<script type="text/javascript">
+			appQt.controller('qtCtrlS',['$scope','addScroll','$timeout',function($scope,addScroll,$timeout){
+				$scope.appData=[
+					{name:'个人信息',url:'javascript:;'},
+					{name:'账户安全',url:'javascript:;'},
+					{name:'企业账号',url:'javascript:;'}
+				];
+                $scope.bannerData={
+					banner:[
+						{
+							imgUrl:'./images/zt/qt_bannerAC.png',
+							url:'javascript:;',
+							search:true,
+							txt:{
+								chinese:'个人中心',
+								english:'ACCOUNT'
+							}
+						}
+					]
+                };
+			}]);
+		</script>
+		<script>
+            $(function () {
+
+                setRoleTableTr();       //设置表格行的选中效果
+
+            });
+
+            (function () {
+                $('.setRoleTable table tbody tr').eq(1).css('borderBottom','1px solid #2982ff');
+                $('.setRoleTable table tbody tr').eq(2).addClass('active');
+            })();
+
+
+            function setRoleTableTr() {
+                $('.setRoleTable table tbody tr').click(function () {
+
+                    $(this).addClass('active').siblings().removeClass('active');
+                    var index = $(this).index();
+                    if(index == 0){
+                        $('.setRoleTable table thead tr').css('borderBottom','1px solid #2982ff');
+                        $('.setRoleTable table tbody tr').css('borderBottom','');
+                    }else{
+                        $('.setRoleTable table thead tr').css('borderBottom','');
+                        $(this).prev().css('borderBottom','1px solid #2982ff').siblings().css('borderBottom','');
+                    }
+
+                });
+            }
+
+
+		</script>
+	</body>
+</html>

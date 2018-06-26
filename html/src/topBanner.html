@@ -1,0 +1,33 @@
+<div ng-class="{'noBanner':bannerdata.noBanner,'qt_topBanner':true}" style="background:linear-gradient(to bottom,{{bannerdata.linerGradient.startColor}},{{bannerdata.linerGradient.endColor}});">
+	<div ng-if="bannerdata.noBanner" class="qt_topBannerC" style="background-image: url({{bannerdata.imgUrl}});">
+		<div class="qt_bannerTxt">
+			<div class="qt_title1" ng-if="bannerdata.txt">
+				{{bannerdata.txt.chinese}}
+				<span ng-class="{'txtWhite':bannerdata.txtWhite}">{{bannerdata.txt.english}}</span>
+			</div>
+			<div class="qt_input" ng-if='bannerdata.search'>
+				<input type="text" name="" id="" value="" />
+			</div>
+		</div>
+	</div>
+	<div ng-else ng-repeat='item in bannerdata.banner' class="qt_topBannerC" style="background-image: url({{item.imgUrl}});">
+		<div class="qt_bannerTxt">
+			<div class="qt_title1">
+				{{item.txt.chinese}}
+				<span ng-class="{'txtWhite':bannerdata.txtWhite}">{{item.txt.english}}</span>
+			</div>
+			<div class="qt_input" ng-if='item.search'>
+				<input type="text" name="" id="" value="" />
+			</div>
+		</div>
+	</div>
+	<div class="qt_nav2" ng-if="!bannerdata.noSubNav">
+		<div class="innerBlock">
+			<ul class="">
+				<li ng-repeat="item in appdata" ng-class="{active:item.selected}" style="width: {{100/appdata.length}}%;">
+					<a href="">{{item.name}}<em ng-if="item.new"></em></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

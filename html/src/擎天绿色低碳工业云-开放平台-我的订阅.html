@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>擎天绿色低碳工业云</title>
+		<link href="css/layout/reset.css" rel="stylesheet" type="text/css">
+		<link href="css/layout/base.css" rel="stylesheet" type="text/css">
+		<link href="../plugins/perfect-scrollbar.min.css" rel="stylesheet" type="text/css">
+		<link href="../plugins/swiper.min.css" rel="stylesheet" type="text/css">
+		<link href="css/master_lj.css" rel="stylesheet" type="text/css">
+		<link href="css/master_zt.css" rel="stylesheet" type="text/css">
+		<link href="css/master_wy.css" rel="stylesheet" type="text/css">
+		<link href="css/debug.css" rel="stylesheet" type="text/css">
+	</head>
+	<body ng-app='app_qt' ng-controller='qtCtrl'>
+		<div class="content" ng-controller='qtCtrlS'>
+			<topn-qt nav-data='topData' sec-data='secData' more-data='moreData'></topn-qt>
+			<topb-qt app-data='appData' banner-data='bannerData'></topb-qt>
+			<div class="qt_center">
+				<div class="innerBlock">
+					<div class="main">
+						<div class="typeArea clearfix" style="background:#e0e5ed;">
+							<div class="leftNav">
+								<ul>
+									<li class="active">
+										<div class="item active">
+											<div class="icon-computer"></div>
+											网站应用
+											<div class=" icon-merge"></div>
+										</div>
+										<div class="item-pull" style="display: block;">
+											<ul>
+												<li>统一用户中心</li>
+												<li class="active">通知、咨询与代办</li>
+												<li>订阅与续费</li>
+												<li>支付与结算</li>
+											</ul>
+										</div>
+									</li>
+									<li>
+										<div class="item">
+											<div class="icon-phone"></div>
+											移动应用
+											<div class=" icon-unfold"></div>
+										</div>
+										<div class="item-pull">
+											<ul>
+												<li>统一用户中心</li>
+												<li class="active">通知、咨询与代办</li>
+												<li>订阅与续费</li>
+												<li>支付与结算</li>
+											</ul>
+										</div>
+									</li>
+									<li>
+										<div class="item">
+											<div class="icon-user"></div>
+											开发者账号
+											<div class=" icon-unfold"></div>
+										</div>
+										<div class="item-pull">
+											<ul>
+												<li>统一用户中心</li>
+												<li class="active">通知、咨询与代办</li>
+												<li>订阅与续费</li>
+												<li>支付与结算</li>
+											</ul>
+										</div>
+									</li>
+									<li>
+										<div class="item">
+											<div class="icon-download"></div>
+											资源下载
+											<div class=" icon-unfold"></div>
+										</div>
+										<div class="item-pull">
+											<ul>
+												<li>统一用户中心</li>
+												<li class="active">通知、咨询与代办</li>
+												<li>订阅与续费</li>
+												<li>支付与结算</li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="om_main">
+								<ul class="om_list">
+									<li ng-repeat='item in mySub'>
+										<div class="om_left">
+											<a href="{{item.url}}" class="om_ava" ng-style="{'background-image':'url({{item.imgUrl}})'}"></a>
+											<span class="cp_star"><em style="width: {{item.star*20}}%;"></em></span>
+										</div>
+										<div class="om_right">
+											<a href="{{item.url}}">{{item.name}}</a>
+											<div class="cp_money"><span>到期</span><strong>{{item.deadline}}</strong><span>个月</span></div>
+											<p>{{item.description}}</p>
+										</div>
+									</li>
+								</ul>
+								<div class="clear"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="rightLink">
+				<div class="consult">
+					<i></i>咨询电话
+				</div>
+				<div class="backtop"></div>
+			</div>
+			<bottom-qt></bottom-qt>
+		</div>
+		<script src="../plugins/jquery-1.9.1.min.js"></script>
+		<script src="../plugins/perfect-scrollbar.jquery.js"></script>
+		<script src="../plugins/swiper.min.js"></script>
+		<script src="../plugins/angular.min.js"></script>
+		<script src="js/base.js"></script>
+		<script src="js/master.js"></script>
+		<script type="text/javascript">
+			appQt.controller('qtCtrlS',['$scope','addScroll','$timeout',function($scope,addScroll,$timeout){
+				$scope.appData=[
+					{name:'开发者文档',url:'javascript:;'},
+					{name:'开发者市场',url:'javascript:;'},
+					{name:'我的API',url:'javascript:;'},
+					{name:'商店管理',url:'javascript:;'},
+					{name:'申请开发者认证',url:'javascript:;'},
+				];
+				$scope.mySub=[
+					{
+						name:'API1',
+						imgUrl:'images/zt/api1.png',
+						star:4,
+						deadline:13,
+						description:'碳资产云版天气日志分析业务迁移到数加MaxCompute后，开发效率提升了超过5倍，存储和计算费用节省了70%每天处理分析2TB的日志数据，更高效的赋能其个性化运营策略',
+						url:'javascript:;'
+					},
+					{
+						name:'API2',
+						imgUrl:'images/zt/api2.png',
+						star:5,
+						deadline:13,
+						description:'碳资产云版天气日志分析业务迁移到数加MaxCompute后，开发效率提升了超过5倍，存储和计算费用节省了70%每天处理分析2TB的日志数据，更高效的赋能其个性化运营策略',
+						url:'javascript:;'
+					},
+					{
+						name:'API3',
+						imgUrl:'images/zt/api3.png',
+						star:3,
+						deadline:13,
+						description:'碳资产云版天气日志分析业务迁移到数加MaxCompute后，开发效率提升了超过5倍，存储和计算费用节省了70%每天处理分析2TB的日志数据，更高效的赋能其个性化运营策略',
+						url:'javascript:;'
+					},
+					{
+						name:'API4',
+						imgUrl:'images/zt/api4.png',
+						star:4,
+						deadline:13,
+						description:'碳资产云版天气日志分析业务迁移到数加MaxCompute后，开发效率提升了超过5倍，存储和计算费用节省了70%每天处理分析2TB的日志数据，更高效的赋能其个性化运营策略',
+						url:'javascript:;'
+					},
+				];
+                $scope.bannerData={
+                	search:true,
+					banner:[
+						{
+							imgUrl:'./images/zt/qt_bannerPL.png',
+							url:'javascript:;',
+							search:true,
+							txt:{
+								chinese:'开放平台',
+								english:'PLATFORM'
+							}
+						}
+					]
+                };
+                var strCut=function(list){
+					$.each(list, function(key,value) {
+						value.description=value.description.slice(0,85);
+					});
+				};
+				strCut($scope.mySub);
+			}]);
+		</script>
+		<script>
+            $(function () {
+                var h = $('.leftNav').next().height();      //获取左侧导航右边的高度
+                $('.leftNav').height(h);                    //设置左侧导航的高度
+
+                $('.leftNav>ul>li').click(function () {
+                    //给每个item一个类样式切换
+                    $(this).children('.item').addClass('active').parent().siblings().children('.item').removeClass('active');
+                    //给当前item-pull下滑效果 其他上滑
+                    $(this).children('.item-pull').slideDown(500).parent().siblings().children('.item-pull').slideUp(500);
+                });
+
+                $('.item-pull>ul>li').click(function () {
+                    //点击item-pull>ul>li添加样式
+                    $(this).addClass('active').siblings().removeClass('active');
+                });
+
+            })
+		</script>
+	</body>
+</html>

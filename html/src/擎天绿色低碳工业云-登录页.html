@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>擎天绿色低碳工业云</title>
+	<link href="css/layout/reset.css" rel="stylesheet" type="text/css">
+	<link href="css/layout/base.css" rel="stylesheet" type="text/css">
+	<link href="../plugins/perfect-scrollbar.min.css" rel="stylesheet" type="text/css">
+	<link href="../plugins/swiper.min.css" rel="stylesheet" type="text/css">
+	<link href="css/master_lj.css" rel="stylesheet" type="text/css">
+	<link href="css/master_zt.css" rel="stylesheet" type="text/css">
+	<link href="css/master_wy.css" rel="stylesheet" type="text/css">
+	<link href="css/debug.css" rel="stylesheet" type="text/css">
+</head>
+<body ng-app='app_qt' ng-controller='qtCtrl'>
+<div class="login" ng-controller='qtCtrlS'>
+	<div class="loginer">
+		<div class="loginAdvert">
+			<div class="loginLogo">擎天绿色低碳工业云</div>
+			<div class="advert">
+				<h3><i ng-style="{'background-image':'url({{datas.headData.icon}})'}"></i>{{datas.headData.title}}</h3>
+				<div class="sideTit">{{datas.headData.sideTit}}</div>
+				<ul class="advertList">
+					<li ng-repeat='item in datas.advertList'><i></i>{{item.txt}}</li>
+				</ul>
+			</div>
+		</div>
+		<div class="logOn">
+			<h2>擎天账号登录</h2>
+			<div class="loginForm">
+				<input type="text" placeholder="请输入擎天账号（手机号码）" class="textStyle" />
+				<div class="password">
+					<input type="password" placeholder="请输入密码" class="passStyle" />
+					<i></i>
+				</div>
+				<div class="loginBtn">登录</div>
+				<div class="loginLabel">
+					<label class="active f_left"><i></i>7天内自动登录</label>
+					<a href="javascript:;" class="f_right">忘记密码</a>
+				</div>
+				<p class="loginTxt">还没有擎天账号？</p>
+				<div class="register">立即注册</div>
+			</div>
+		</div>
+	</div>
+	<div class="copyRight">Copyright @  2017, Sinosoft Co., Ltd. All Right Reserved. 南京擎天科技有限公司&nbsp;&nbsp;&nbsp;&nbsp;备案号在此处  （法规要求）加链接到<a href="javascript:;">http://www.miibeian.gov.cn/</a></div>
+</div>
+<script src="../plugins/jquery-1.9.1.min.js"></script>
+<script src="../plugins/perfect-scrollbar.jquery.js"></script>
+<script src="../plugins/angular.min.js"></script>
+<script src="../plugins/swiper.min.js"></script>
+<script src="js/base.js"></script>
+<script src="js/master.js"></script>
+<script type="text/javascript">
+	appQt.controller('qtCtrlS',['$scope',function($scope){
+		$scope.datas = {
+			headData:{
+                title:'丰富易用解决方案',
+                icon:'images/wy/ico12.png',
+                sideTit:'专注工业场景，实现方案集成部署'
+            },
+            advertList:[
+	            {txt:'低碳领域'},
+				{txt:'节能领域'},
+				{txt:'环保领域'}
+            ]
+		};
+	}]);
+</script>
+</body>
+</html>

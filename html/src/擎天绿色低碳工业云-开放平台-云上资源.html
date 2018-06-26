@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>擎天绿色低碳工业云</title>
+		<link href="css/layout/reset.css" rel="stylesheet" type="text/css">
+		<link href="css/layout/base.css" rel="stylesheet" type="text/css">
+		<link href="../plugins/perfect-scrollbar.min.css" rel="stylesheet" type="text/css">
+		<link href="../plugins/swiper.min.css" rel="stylesheet" type="text/css">
+		<link href="css/master_lj.css" rel="stylesheet" type="text/css">
+		<link href="css/master_zt.css" rel="stylesheet" type="text/css">
+		<link href="css/master_wy.css" rel="stylesheet" type="text/css">
+		<link href="css/debug.css" rel="stylesheet" type="text/css">
+	</head>
+	<body ng-app='app_qt' ng-controller='qtCtrl'>
+		<div class="content" ng-controller='qtCtrlS'>
+			<topn-qt nav-data='topData' sec-data='secData' more-data='moreData'></topn-qt>
+			<topb-qt app-data='appData' banner-data='bannerData'></topb-qt>
+			<div class="qt_center">
+				<div class="innerBlock">
+					<div class="main">
+						<div class="typeArea clearfix" style="background:#e0e5ed;">
+							<div class="cl_myResource">
+								<div class="cl_title"><span>我的资源</span></div>
+								<div class="cl_con1">
+									<div class="cl_left1">
+										<div class="cl_size">
+											<strong>50%</strong>
+											<p>100GB/500GB</p>
+										</div>
+										<div class="cl_txt1">
+											<p class="textR">共部署</p>
+											<p><strong>201</strong></p>
+											<p>实例</p>
+										</div>
+									</div>
+									<div class="cl_right1">
+										<p>其中</p>
+										<div class="cl_data" ng-repeat='item in myResource'>
+											<span class="cl_per"><em style="width: {{item.width}}%;"></em></span>
+											<strong>{{item.num}}</strong>
+											<span class="cl_name">{{item.name}}</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="cl_myExm">
+								<div class="cl_titleA">
+									<div class="cl_title">
+										<span>我的实例</span>
+										<div class="f_right">
+											<div class="cl_input">
+												<input type="text" placeholder="请填写关键词" />
+											</div>
+											<div class="cl_search" >搜索</div>
+										</div>
+									</div>
+									<ul class="cl_tab">
+										<li class="active">全部</li>
+										<li>APP</li>
+										<li>API</li>
+										<li>数据库</li>
+									</ul>
+									<div class="clear"></div>
+								</div>
+								<div class="cl_cell" ng-repeat='item in allList'>
+									<div class="cl_titleC">
+										<span>{{item.txt}}：<strong>{{item.name}}</strong></span>
+										<div class="cl_rightT f_right">
+											<span>共{{item.exm}}实例</span>
+											<span>占用{{item.size}}GB</span>
+											<span>用户数{{item.num}}个</span>
+										</div>
+									</div>
+									<div class="cl_list">
+										<div class="cl_cellL" ng-repeat='d in item.list'>
+											<div ng-class="{'active':d.active}">
+												<div class="cl_ava">
+													<div ng-style="{'background-image':'url({{d.imgUrl}})'}"></div>
+												</div>
+												<p class="cl_titleL">{{d.nameL}}</p>
+												<div class="cl_btm">
+													<span class="cl_letter3">用户数</span>
+													<p class="cl_msg"><strong>{{d.userNum}}</strong>个</p>
+												</div>
+												<div class="cl_btm">
+													<span>占用资源</span>
+													<p class="cl_msg"><strong>{{d.userSize}}</strong>GB</p>
+												</div>
+											</div>
+										</div>
+										<div class="clear"></div>
+									</div>
+								</div>
+							</div>
+							<div class="cp_pagination">
+								<ul>
+									<li class="cp_pgLeft"></li>
+									<li class="cp_num active">1</li>
+									<li title="向前5页" class="cp_pgLess"></li>
+									<li class="cp_num">2</li>
+									<li class="cp_num">3</li>
+									<li class="cp_num">4</li>
+									<li class="cp_num">5</li>
+									<li class="cp_num">6</li>
+									<li title="向后5页" class="cp_pgMore"></li>
+									<li class="cp_num">16</li>
+									<li class="cp_pgRight active"></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="rightLink">
+				<div class="consult">
+					<i></i>咨询电话
+				</div>
+				<div class="backtop"></div>
+			</div>
+			<bottom-qt></bottom-qt>
+		</div>
+		<script src="../plugins/jquery-1.9.1.min.js"></script>
+		<script src="../plugins/perfect-scrollbar.jquery.js"></script>
+		<script src="../plugins/swiper.min.js"></script>
+		<script src="../plugins/angular.min.js"></script>
+		<script src="js/base.js"></script>
+		<script src="js/master.js"></script>
+		<script type="text/javascript">
+			appQt.controller('qtCtrlS',['$scope','addScroll','$timeout',function($scope,addScroll,$timeout){
+				$scope.appData=[
+					{name:'开发者文档',url:'javascript:;'},
+					{name:'开发者市场',url:'javascript:;'},
+					{name:'我的API',url:'javascript:;'},
+					{name:'商店管理',url:'javascript:;'},
+					{name:'申请开发者认证',url:'javascript:;'},
+				];
+                $scope.bannerData={
+                	search:true,
+					banner:[
+						{
+							imgUrl:'./images/zt/qt_bannerPL.png',
+							url:'javascript:;',
+							search:true,
+							txt:{
+								chinese:'开放平台',
+								english:'PLATFORM'
+							}
+						}
+					]
+                };
+                $scope.myResource=[
+                	{width:70,num:108,name:'APP'},
+                	{width:40,num:56,name:'API'},
+                	{width:15,num:37,name:'数据库'},
+                ]
+                $scope.allList=[
+                	{
+                		txt:'APP',
+                		name:'企业碳资产',
+                		exm:100,
+                		size:50,
+                		num:50,
+                		list:[
+                			{
+								imgUrl:'images/zt/cl_ava1.png',
+                				nameL:'企业碳资产云版V1.01',
+                				userNum:01,
+                				userSize:50,
+                				active:true
+                			},
+                			{
+                				imgUrl:'images/zt/cl_ava1.png',
+                				nameL:'企业碳资产云版V1.01',
+                				userNum:01,
+                				userSize:50
+                			},
+                			{
+                				imgUrl:'images/zt/cl_ava1.png',
+                				nameL:'企业碳资产云版V1.01',
+                				userNum:01,
+                				userSize:50
+                			},
+                			{
+                				imgUrl:'images/zt/cl_ava1.png',
+                				nameL:'企业碳资产云版V1.01',
+                				userNum:01,
+                				userSize:50
+                			},
+                			{
+                				imgUrl:'images/zt/cl_ava1.png',
+                				nameL:'企业碳资产云版V1.01',
+                				userNum:01,
+                				userSize:50
+                			},
+                			{
+                				imgUrl:'images/zt/axsH.png',
+                				nameL:'企业碳资产云版V1.01',
+                				userNum:01,
+                				userSize:50
+                			},
+                			{
+                				imgUrl:'images/zt/axsH.png',
+                				nameL:'企业碳资产云版V1.01',
+                				userNum:01,
+                				userSize:50
+                			},
+                			{
+                				imgUrl:'images/zt/axsH.png',
+                				nameL:'企业碳资产云版V1.01',
+                				userNum:01,
+                				userSize:50
+                			},
+                			{
+                				imgUrl:'images/zt/axsH.png',
+                				nameL:'企业碳资产云版V1.01',
+                				userNum:01,
+                				userSize:50
+                			},
+                			{
+                				imgUrl:'images/zt/axsH.png',
+                				nameL:'企业碳资产云版V1.01',
+                				userNum:01,
+                				userSize:50
+                			},
+                			{
+                				imgUrl:'images/zt/axsH.png',
+                				nameL:'企业碳资产云版V1.01',
+                				userNum:01,
+                				userSize:50
+                			},
+                			{
+                				imgUrl:'images/zt/axsH.png',
+                				nameL:'企业碳资产云版V1.01',
+                				userNum:01,
+                				userSize:50
+                			},
+                		]
+                	},
+                	{
+                		txt:'APP',
+                		name:'安迅思',
+                		exm:100,
+                		size:50,
+                		num:50,
+                		list:[
+                			{
+                				imgUrl:'images/zt/cl_ava1.png',
+                				nameL:'企业碳资产云版V1.01',
+                				userNum:01,
+                				userSize:50
+                			}
+                		]
+                	},
+                	{
+                		txt:'API',
+                		name:'3D展示',
+                		exm:100,
+                		size:50,
+                		num:50
+                	},
+                	{
+                		txt:'APP',
+                		name:'5D展示（超维图形展示技术）',
+                		exm:100,
+                		size:50,
+                		num:50,
+                		list:[
+                			{
+                				imgUrl:'images/zt/cl_ava1.png',
+                				nameL:'企业碳资产云版V1.01',
+                				userNum:01,
+                				userSize:50
+                			}
+                		]
+                	},
+                ];
+			}]);
+		</script>
+		<script>
+            $(function () {
+                var h = $('.leftNav').next().height();      //获取左侧导航右边的高度
+                $('.leftNav').height(h);                    //设置左侧导航的高度
+
+                $('.leftNav>ul>li').click(function () {
+                    //给每个item一个类样式切换
+                    $(this).children('.item').addClass('active').parent().siblings().children('.item').removeClass('active');
+                    //给当前item-pull下滑效果 其他上滑
+                    $(this).children('.item-pull').slideDown(500).parent().siblings().children('.item-pull').slideUp(500);
+                });
+
+                $('.item-pull>ul>li').click(function () {
+                    //点击item-pull>ul>li添加样式
+                    $(this).addClass('active').siblings().removeClass('active');
+                });
+            })
+            $(function(){
+            	$('.cl_list').eq(0).show();
+            	$('.cl_titleC').eq(0).addClass('open');
+            	$('body').on('click','.cl_titleC',function(){
+            		if($(this).next('.cl_list').css('display')=='none'&&$(this).siblings('.cl_list').find('.cl_cellL').length){
+            			$('.cl_titleC').removeClass('open');
+            			$(this).addClass('open');
+            			$('.cl_list').slideUp();
+            			$(this).siblings('.cl_list').slideDown();
+            		}
+            	})
+            })
+		</script>
+	</body>
+</html>

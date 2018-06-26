@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>擎天绿色低碳工业云</title>
+		<link href="css/layout/reset.css" rel="stylesheet" type="text/css">
+		<link href="css/layout/base.css" rel="stylesheet" type="text/css">
+		<link href="../plugins/perfect-scrollbar.min.css" rel="stylesheet" type="text/css">
+		<link href="../plugins/swiper.min.css" rel="stylesheet" type="text/css">
+		<link href="css/master_lj.css" rel="stylesheet" type="text/css">
+		<link href="css/master_zt.css" rel="stylesheet" type="text/css">
+		<link href="css/master_wy.css" rel="stylesheet" type="text/css">
+		<link href="css/debug.css" rel="stylesheet" type="text/css">
+	</head>
+	<body ng-app='app_qt' ng-controller='qtCtrl'>
+		<div class="content" ng-controller='qtCtrlS'>
+			<topn-qt nav-data='topData' sec-data='secData' more-data='moreData'></topn-qt>
+			<topb-qt app-data='appData' banner-data='bannerData'></topb-qt>
+			<div class="qt_center">
+				<div class="innerBlock">
+					<div class="main">
+						<div class="typeArea clearfix">
+							<div class="setRoleNav">
+								<ul>
+									<li class="active">
+										<div class="icon-admin"></div>
+										管理员
+									</li>
+									<li>
+										<div class="icon-operation"></div>
+										操作员
+									</li>
+									<li>
+										<div class="icon-lead"></div>
+										集团老总
+									</li>
+									<li>
+										<div class="icon-add"></div>
+										新增角色
+									</li>
+								</ul>
+							</div>
+							<div class="serMain openPlatform setRoleMain">
+								<div class="setRole">
+									<div class="setRoleH">
+										<h4>名称</h4>
+									</div>
+									<div class="setRoleM">
+										<input class="usernameInput" type="text" placeholder="请输入角色名称">
+									</div>
+								</div>
+								<div class="setRole">
+									<div class="setRoleH">
+										<h4>访问</h4>
+									</div>
+									<div class="setRoleM">
+										<div class="visits">
+											<div class="visit active">绿色采集</div>
+											<div class="visit">应用商店</div>
+											<div class="visit">开发者商店</div>
+											<div class="visit">企业账号</div>
+										</div>
+									</div>
+								</div>
+								<div class="setRole">
+									<div class="setRoleH">
+										<h4>操作</h4>
+									</div>
+									<div class="setRoleM">
+										<div class="checkBox" style="margin-top: 10px;">
+											<div class="icon-checkbox active" ></div>
+											<label>登录EDC</label>
+											<div class="icon-checkbox active" ></div>
+											<label>登录EDC</label>
+											<div class="icon-checkbox" ></div>
+											<label>登录EDC</label>
+										</div>
+										<div class="checkBox">
+											<div class="icon-checkbox active" ></div>
+											<label>登录EDC</label>
+											<div class="icon-checkbox " ></div>
+											<label>登录EDC</label>
+											<div class="icon-checkbox" ></div>
+											<label>登录EDC</label>
+										</div>
+									</div>
+								</div>
+								<div class="saveBtn" style="margin-top: 30px;margin-left: 10px;">
+									保存
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="rightLink">
+				<div class="consult">
+					<i></i>咨询电话
+				</div>
+				<div class="backtop"></div>
+			</div>
+			<bottom-qt></bottom-qt>
+		</div>
+		<script src="../plugins/jquery-1.9.1.min.js"></script>
+		<script src="../plugins/perfect-scrollbar.jquery.js"></script>
+		<script src="../plugins/swiper.min.js"></script>
+		<script src="../plugins/angular.min.js"></script>
+		<script src="js/base.js"></script>
+		<script src="js/master.js"></script>
+		<script type="text/javascript">
+			appQt.controller('qtCtrlS',['$scope','addScroll','$timeout',function($scope,addScroll,$timeout){
+				$scope.appData=[
+					{name:'个人信息',url:'javascript:;'},
+					{name:'账户安全',url:'javascript:;'},
+					{name:'企业账号',url:'javascript:;'},
+				];
+                $scope.bannerData={
+					banner:[
+						{
+							imgUrl:'./images/zt/qt_bannerAC.png',
+							url:'javascript:;',
+							txt:{
+								chinese:'个人中心',
+								english:'ACCOUNT'
+							},
+							search:true
+						}
+					]
+                };
+			}]);
+		</script>
+		<script>
+            $(function () {
+                var h = $('.setRoleNav').next().height();      //获取左侧导航右边的高度
+                $('.setRoleNav').height(h);                    //设置左侧导航的高度
+
+                setRoleNav();           //设置左侧菜单的选中效果
+
+                isChecked();
+            });
+
+            (function () {
+                $('.setRoleTable table tbody tr').eq(1).css('borderBottom','1px solid #2982ff');
+                $('.setRoleTable table tbody tr').eq(2).addClass('active');
+            })();
+
+            function setRoleNav() {
+                $('.setRoleNav>ul>li').click(function () {
+                    $(this).addClass('active').siblings().removeClass('active');
+                });
+            }
+
+
+            function isChecked() {
+                $('.icon-checkbox').click(function () {
+                    if($(this).hasClass('active')){
+                        $(this).removeClass('active');
+                    }else{
+                        $(this).addClass('active');
+                    }
+                });
+
+                $('.setRoleM .visit').click(function () {
+                    $(this).addClass('active').siblings().removeClass('active');
+                });
+            }
+
+		</script>
+	</body>
+</html>

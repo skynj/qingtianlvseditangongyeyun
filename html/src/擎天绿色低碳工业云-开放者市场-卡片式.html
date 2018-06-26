@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>擎天绿色低碳工业云</title>
+	<link href="css/layout/reset.css" rel="stylesheet" type="text/css">
+	<link href="css/layout/base.css" rel="stylesheet" type="text/css">
+	<link href="../plugins/perfect-scrollbar.min.css" rel="stylesheet" type="text/css">
+	<link href="../plugins/swiper.min.css" rel="stylesheet" type="text/css">
+	<link href="css/master_lj.css" rel="stylesheet" type="text/css">
+	<link href="css/master_zt.css" rel="stylesheet" type="text/css">
+	<link href="css/master_wy.css" rel="stylesheet" type="text/css">
+	<link href="css/debug.css" rel="stylesheet" type="text/css">
+</head>
+<body ng-app='app_qt' ng-controller='qtCtrl'>
+<div class="content" ng-controller='qtCtrlS'>
+	<topn-qt nav-data='topData' sec-data='secData' more-data='moreData'></topn-qt>
+	<topb-qt app-data='appData' banner-data='bannerData'></topb-qt>
+	<div class="qt_center" style="padding-bottom:50px">
+		<div class="innerBlock">
+			<div class="subordinate">
+				<h4 class="f_left">所属类目</h4>
+				<ul class="f_left">
+					<li>全部</li>
+					<li>类目一</li>
+					<li class="active">类目二</li>
+					<li>类目三</li>
+					<li>类目四</li>
+					<li>类目五</li>
+					<li>类目六</li>
+					<li>类目七</li>
+					<li>类目八</li>
+					<li>类目九</li>
+					<li>类目十</li>
+				</ul>
+				<div class="cateIco f_right"></div>
+				<div class="clear"></div>
+			</div>
+			<div class="category">
+				<ul>
+					<li ng-repeat="item in categoryList">
+						<div class="categoryImg" ng-style="{'background-image':'url({{item.imgUrl}})'}"></div>
+						<div class="categoryTxt">
+							<h3>{{item.head}}</h3>
+							<p>{{item.description}}</p>
+							<span class="cp_star"><em style="width: {{item.hot*20}}%"></em></span><span>产品热度</span>
+						</div>
+					</li>
+					<div class="clear"></div>
+				</ul>
+			</div>
+			<div class="cp_pagination">
+				<ul>
+					<li class="cp_pgLeft"></li>
+					<li class="cp_num active">1</li>
+					<li title="向前5页" class="cp_pgLess"></li>
+					<li class="cp_num">2</li>
+					<li class="cp_num">3</li>
+					<li class="cp_num">4</li>
+					<li class="cp_num">5</li>
+					<li class="cp_num">6</li>
+					<li title="向后5页" class="cp_pgMore"></li>
+					<li class="cp_num">16</li>
+					<li class="cp_pgRight active"></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="rightLink">
+		<div class="consult">
+			<i></i>咨询电话
+		</div>
+		<div class="backtop"></div>
+	</div>
+	<bottom-qt></bottom-qt>
+</div>
+<script src="../plugins/jquery-1.9.1.min.js"></script>
+<script src="../plugins/perfect-scrollbar.jquery.js"></script>
+<script src="../plugins/angular.min.js"></script>
+<script src="../plugins/swiper.min.js"></script>
+<script src="js/base.js"></script>
+<script src="js/master.js"></script>
+<script type="text/javascript">
+	appQt.controller('qtCtrlS',['$scope','addScroll','$timeout',function($scope,addScroll,$timeout){
+		$scope.appData=[
+			{name:'开发者文档',url:'javascript:;'},
+			{name:'开发者市场',url:'javascript:;'},
+			{name:'我的API',url:'javascript:;'},
+			{name:'商店管理',url:'javascript:;'},
+			{name:'申请开发者认证',url:'javascript:;'},
+		];
+		$scope.bannerData={
+        	search:true,
+			banner:[
+				{
+					imgUrl:'./images/zt/qt_bannerPL.png',
+					url:'javascript:;',
+					search:true,
+					txt:{
+						chinese:'开放平台',
+						english:'PLATFORM'
+					}
+				}
+			]
+        };
+		$scope.categoryList=[
+			{
+				imgUrl:'images/wy/list1.png',
+				head:'擎天企业碳资产云板',
+				description:'三十个字能不能放的下三十个字能不能放的下三十个字能不能放的下。',
+				hot:4
+			},
+			{
+				imgUrl:'images/wy/list2.png',
+				head:'擎天企业碳资产云板',
+				description:'三十个字能不能放的下三十个字能不能放的下三十个字能不能放的下。',
+				hot:5
+			},
+			{
+				imgUrl:'images/wy/list3.png',
+				head:'擎天企业碳资产云板',
+				description:'三十个字能不能放的下三十个字能不能放的下三十个字能不能放的下。',
+				hot:3
+			},
+			{
+				imgUrl:'images/wy/list4.png',
+				head:'擎天企业碳资产云板',
+				description:'三十个字能不能放的下三十个字能不能放的下三十个字能不能放的下。',
+				hot:3
+			},
+			{
+				imgUrl:'images/wy/list5.png',
+				head:'擎天企业碳资产云板',
+				description:'三十个字能不能放的下三十个字能不能放的下三十个字能不能放的下。',
+				hot:5
+			},
+			{
+				imgUrl:'images/wy/list6.png',
+				head:'擎天企业碳资产云板',
+				description:'三十个字能不能放的下三十个字能不能放的下三十个字能不能放的下。',
+				hot:3
+			},
+			{
+				imgUrl:'images/wy/list7.png',
+				head:'擎天企业碳资产云板',
+				description:'三十个字能不能放的下三十个字能不能放的下三十个字能不能放的下。',
+				hot:4
+			},
+			{
+				imgUrl:'images/wy/list8.png',
+				head:'擎天企业碳资产云板',
+				description:'三十个字能不能放的下三十个字能不能放的下三十个字能不能放的下。',
+				hot:5
+			},
+			{
+				imgUrl:'images/wy/list9.png',
+				head:'擎天企业碳资产云板',
+				description:'三十个字能不能放的下三十个字能不能放的下三十个字能不能放的下。',
+				hot:3
+			},
+			{
+				imgUrl:'images/wy/list10.png',
+				head:'擎天企业碳资产云板',
+				description:'三十个字能不能放的下三十个字能不能放的下三十个字能不能放的下。',
+				hot:5
+			},
+			{
+				imgUrl:'images/wy/list11.png',
+				head:'擎天企业碳资产云板',
+				description:'三十个字能不能放的下三十个字能不能放的下三十个字能不能放的下。',
+				hot:2
+			},
+			{
+				imgUrl:'images/wy/list12.png',
+				head:'擎天企业碳资产云板',
+				description:'三十个字能不能放的下三十个字能不能放的下三十个字能不能放的下。',
+				hot:5
+			}
+		];
+	}]);
+</script>
+</body>
+</html>

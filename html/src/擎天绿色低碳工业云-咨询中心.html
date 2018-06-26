@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>擎天绿色低碳工业云</title>
+		<link href="css/layout/reset.css" rel="stylesheet" type="text/css">
+		<link href="css/layout/base.css" rel="stylesheet" type="text/css">
+		<link href="../plugins/perfect-scrollbar.min.css" rel="stylesheet" type="text/css">
+		<link href="../plugins/swiper.min.css" rel="stylesheet" type="text/css">
+		<link href="css/master_lj.css" rel="stylesheet" type="text/css">
+		<link href="css/master_zt.css" rel="stylesheet" type="text/css">
+		<link href="css/master_wy.css" rel="stylesheet" type="text/css">
+		<link href="css/debug.css" rel="stylesheet" type="text/css">
+	</head>
+	<body ng-app='app_qt' ng-controller='qtCtrl'>
+		<div class="content" ng-controller='qtCtrlS'>
+			<topn-qt nav-data='topData' sec-data='secData' more-data='moreData' banner-data='bannerData'></topn-qt>
+			<topb-qt app-data='appData' banner-data='bannerData'></topb-qt>
+			<div class="qt_center">
+				<div class="innerBlock">
+					<div class="main">
+						<div class="zx_list">
+							<div class="zx_cell" ng-repeat='item in productList'>
+								<div class="zx_date">
+									<p>{{item.date}}</p>
+									<strong>{{item.month}}月</strong>
+									<span class="zx_see">{{item.see}}</span>
+								</div>
+								<div class="zx_text">
+									<a href="{{item.url}}" class="cp_head">{{item.head}}</a>
+									<div class="cp_details">
+										<a href="" class="zx_author">作者：{{item.author}}</a>
+										<div class="cp_grade" ng-if='item.hot'><span>产品热度</span><span class="cp_star"><em style="width: {{item.hot*20}}%;"></em></span></div>
+										<div class="cp_comments f_right" ng-if='item.comments'>评论<span>{{item.comments}}</span>条</div>
+									</div>
+									<p class="cp_description">{{item.description}}</p>
+									<div class="cp_more">
+										<a href="{{item.url}}">查看详情</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="cp_pagination">
+							<ul>
+								<li class="cp_pgLeft"></li>
+								<li class="cp_num active">1</li>
+								<li title="向前5页" class="cp_pgLess"></li>
+								<li class="cp_num">2</li>
+								<li class="cp_num">3</li>
+								<li class="cp_num">4</li>
+								<li class="cp_num">5</li>
+								<li class="cp_num">6</li>
+								<li title="向后5页" class="cp_pgMore"></li>
+								<li class="cp_num">16</li>
+								<li class="cp_pgRight active"></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="rightLink">
+				<div class="consult">
+					<i></i>咨询电话
+				</div>
+				<div class="backtop"></div>
+			</div>
+			<bottom-qt></bottom-qt>
+		</div>
+		<script src="../plugins/jquery-1.9.1.min.js"></script>
+		<script src="../plugins/perfect-scrollbar.jquery.js"></script>
+		<script src="../plugins/swiper.min.js"></script>
+		<script src="../plugins/angular.min.js"></script>
+		<script src="js/base.js"></script>
+		<script src="js/master.js"></script>
+		<script type="text/javascript">
+			appQt.controller('qtCtrlS',['$scope','addScroll','$timeout',function($scope,addScroll,$timeout){
+				$scope.appData=[
+					{name:'全部咨询',url:'javascript:;'},
+					{name:'视频影音',url:'javascript:;'},
+					{name:'媒体报道',url:'javascript:;'},
+					{name:'近期活动',url:'javascript:;'},
+					{name:'获取资讯',url:'javascript:;',new:true},
+				];
+                $scope.bannerData={
+                	search:true,
+					noBanner:true,
+					txt:{
+						chinese:'资讯中心',
+						english:'CONSULTATION'
+					}
+                };
+				$scope.productList=[
+					{
+						head:'从三方面看G20峰会能否促进后巴黎时代气候行动？',
+						author:'张三',
+						month:10,
+						hot:4,
+						comments:8266,
+						date:'2017.10.09',
+						see:86,
+						description:'继2015年巴黎气候协定之后，世界最大经济体的领导人们将于今年9月在中国杭州举行的G20领导人峰会上再次聚首。按照惯例，G20领导人峰会将重点讨论经济增长和金融稳定议题继2015年巴黎气候协定之后，世界最大经济体的领导人们将于今年9月在中国杭州举行的G20领导人峰会上再次聚首。按照惯例，G20领导人峰会将重点讨论经济增长和金融稳定议题111...',
+						url:'',
+						imgUrl:'images/zt/cp_list1.png'
+					},
+					{
+						head:'从三方面看G20峰会能否促进后巴黎时代气候行动？',
+						author:'张三',
+						month:10,
+						date:'2017.10.09',
+						see:86,
+						description:'继2015年巴黎气候协定之后，世界最大经济体的领导人们将于今年9月在中国杭州举行的G20领导人峰会上再次聚首。按照惯例，G20领导人峰会将重点讨论经济增长和金融稳定议题继2015年巴黎气候协定之后，世界最大经济体的领导人们将于今年9月在中国杭州举行的G20领导人峰会上再次聚首。按照惯例，G20领导人峰会将重点讨论经济增长和金融稳定议题111...',
+						url:'',
+						imgUrl:'images/zt/cp_list1.png'
+					},
+					{
+						head:'从三方面看G20峰会能否促进后巴黎时代气候行动？',
+						author:'张三',
+						month:9,
+						date:'2017.09.09',
+						see:86,
+						description:'继2015年巴黎气候协定之后，世界最大经济体的领导人们将于今年9月在中国杭州举行的G20领导人峰会上再次聚首。按照惯例，G20领导人峰会将重点讨论经济增长和金融稳定议题继2015年巴黎气候协定之后，世界最大经济体的领导人们将于今年9月在中国杭州举行的G20领导人峰会上再次聚首。按照惯例，G20领导人峰会将重点讨论经济增长和金融稳定议题111...',
+						url:'',
+						imgUrl:'images/zt/cp_list1.png'
+					},
+					{
+						head:'从三方面看G20峰会能否促进后巴黎时代气候行动？',
+						author:'张三',
+						month:8,
+						date:'2017.08.09',
+						see:86,
+						description:'继2015年巴黎气候协定之后，世界最大经济体的领导人们将于今年9月在中国杭州举行的G20领导人峰会上再次聚首。按照惯例，G20领导人峰会将重点讨论经济增长和金融稳定议题继2015年巴黎气候协定之后，世界最大经济体的领导人们将于今年9月在中国杭州举行的G20领导人峰会上再次聚首。按照惯例，G20领导人峰会将重点讨论经济增长和金融稳定议题111...',
+						url:'',
+						imgUrl:'images/zt/cp_list1.png'
+					},
+				];
+				var strCut=function(list){
+					$.each(list, function(key,value) {
+						value.description=value.description.slice(0,168);
+					});
+				};
+				strCut($scope.productList);
+			}]);
+		</script>
+		<script>
+            $(function () {
+                var h = $('.leftNav').next().height();      //获取左侧导航右边的高度
+                $('.leftNav').height(h);                    //设置左侧导航的高度
+
+                $('.leftNav>ul>li').click(function () {
+                    //给每个item一个类样式切换
+                    $(this).children('.item').addClass('active').parent().siblings().children('.item').removeClass('active');
+                    //给当前item-pull下滑效果 其他上滑
+                    $(this).children('.item-pull').slideDown(500).parent().siblings().children('.item-pull').slideUp(500);
+                });
+
+                $('.item-pull>ul>li').click(function () {
+                    //点击item-pull>ul>li添加样式
+                    $(this).addClass('active').siblings().removeClass('active');
+                });
+            })
+		</script>
+	</body>
+</html>

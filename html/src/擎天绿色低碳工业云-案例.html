@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>擎天绿色低碳工业云</title>
+		<link href="css/layout/reset.css" rel="stylesheet" type="text/css">
+		<link href="css/layout/base.css" rel="stylesheet" type="text/css">
+		<link href="../plugins/perfect-scrollbar.min.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="../plugins/swiper.min.css" />
+		<link href="css/master_lj.css" rel="stylesheet" type="text/css">
+		<link href="css/master_zt.css" rel="stylesheet" type="text/css">
+		<link href="css/master_wy.css" rel="stylesheet" type="text/css">
+		<link href="css/debug.css" rel="stylesheet" type="text/css">
+	</head>
+	<body ng-app='app_qt' ng-controller='qtCtrl'>
+		<div class="content" ng-controller='qtCtrlS'>
+			<topn-qt nav-data='topData' sec-data='secData' more-data='moreData'></topn-qt>
+			<topb-qt app-data='appData' banner-data='bannerData'></topb-qt>
+			<div class="qt_center">
+				<div class="innerBlock">
+					<div class="main">
+						<div class="cp_list">
+							<ul>
+								<li ng-repeat='item in productList'>
+									<div class="cp_img" ng-style="{'background-image':'url({{item.imgUrl}})'}"></div>
+									<div class="cp_text">
+										<a href="{{item.url}}" class="cp_head">{{item.head}}</a>
+										<div class="cp_details">
+											<a href="" class="cp_author">{{item.author}}</a>
+										</div>
+										<p class="cp_description">{{item.description}}</p>
+										<div class="cp_more">
+											<a href="{{item.url}}">应用详情</a>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="cp_pagination">
+							<ul>
+								<li class="cp_pgLeft"></li>
+								<li class="cp_num active">1</li>
+								<li title="向前5页" class="cp_pgLess"></li>
+								<li class="cp_num">2</li>
+								<li class="cp_num">3</li>
+								<li class="cp_num">4</li>
+								<li class="cp_num">5</li>
+								<li class="cp_num">6</li>
+								<li title="向后5页" class="cp_pgMore"></li>
+								<li class="cp_num">16</li>
+								<li class="cp_pgRight active"></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="rightLink">
+				<div class="consult">
+					<i></i>咨询电话
+				</div>
+				<div class="backtop"></div>
+			</div>
+			<bottom-qt></bottom-qt>
+		</div>
+		<script src="../plugins/jquery-1.9.1.min.js"></script>
+		<script src="../plugins/perfect-scrollbar.jquery.js"></script>
+		<script src="../plugins/angular.min.js"></script>
+		<script src="../plugins/swiper.min.js"></script>
+		<script src="js/base.js"></script>
+		<script src="js/master.js"></script>
+		<script type="text/javascript">
+			appQt.controller('qtCtrlS',['$scope','addScroll','$timeout',function($scope,addScroll,$timeout){
+				$scope.appData=[
+					{name:'低碳案例',description:'简单的文字说明',url:'javascript:;'},
+					{name:'环保案例',description:'简单的文字说明',url:'javascript:;'},
+					{name:'节能案例',description:'简单的文字说明',url:'javascript:;'},
+					{name:'金融案例',description:'简单的文字说明',url:'javascript:;'},
+					{name:'工业案例',description:'简单的文字说明',url:'javascript:;'},
+					{name:'擎天专区',description:'简单的文字说明',url:'javascript:;',new:true},
+				];
+				$scope.bannerData={
+					banner:[
+						{
+							imgUrl:'./images/zt/qt_bannerC.png',
+							url:'javascript:;',
+							search:true,
+							txt:{
+								chinese:'案例',
+								english:'CASE'
+							}
+						}
+					]
+				};
+				$scope.productList=[
+					{
+						head:'碳资产云版',
+						author:'Alexdndre',
+						description:'碳资产云版天气日志分析业务迁移到数加MaxCompute后，开发效率提升了超过5倍，存储和计算费用节省了70%，每天处理分析2TB的日志数据，更高效的赋能其个性化运营策略3213',
+						url:'',
+						imgUrl:'images/zt/cp_list1.png'
+					},
+					{
+						head:'安迅思碳市场行情',
+						author:'ICIS',
+						description:'碳资产云版天气日志分析业务迁移到数加MaxCompute后，开发效率提升了超过5倍，存储和计算费用节省了70%，每天处理分析2TB的日志数据，更高效的赋能其个性化运营策略3213',
+						url:'',
+						imgUrl:'images/zt/cp_list2.png'
+					},
+					{
+						head:'碳资产云版',
+						author:'擎天科技',
+						description:'碳资产云版天气日志分析业务迁移到数加MaxCompute后，开发效率提升了超过5倍，存储和计算费用节省了70%，每天处理分析2TB的日志数据，更高效的赋能其个性化运营策略3213',
+						url:'',
+						imgUrl:'images/zt/cp_list3.png'
+					},
+					{
+						head:'安迅思碳市场行情',
+						author:'ICIS',
+						description:'碳资产云版天气日志分析业务迁移到数加MaxCompute后，开发效率提升了超过5倍，存储和计算费用节省了70%，每天处理分析2TB的日志数据，更高效的赋能其个性化运营策略3213',
+						url:'',
+						imgUrl:'images/zt/cp_list4.png'
+					},
+					{
+						head:'碳资产云版',
+						author:'擎天科技',
+						description:'碳资产云版天气日志分析业务迁移到数加MaxCompute后，开发效率提升了超过5倍，存储和计算费用节省了70%，每天处理分析2TB的日志数据，更高效的赋能其个性化运营策略3213',
+						url:'',
+						imgUrl:'images/zt/cp_list5.png'
+					}
+				];
+				var strCut=function(list){
+					$.each(list, function(key,value) {
+						value.description=value.description.slice(0,85);
+					});
+				};
+				strCut($scope.productList);
+			}]);
+		</script>
+	</body>
+</html>

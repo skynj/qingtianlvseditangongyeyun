@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>擎天绿色低碳工业云</title>
+		<link href="css/layout/reset.css" rel="stylesheet" type="text/css">
+		<link href="css/layout/base.css" rel="stylesheet" type="text/css">
+		<link href="../plugins/perfect-scrollbar.min.css" rel="stylesheet" type="text/css">
+		<link href="../plugins/swiper.min.css" rel="stylesheet" type="text/css">
+		<link href="css/master_lj.css" rel="stylesheet" type="text/css">
+		<link href="css/master_zt.css" rel="stylesheet" type="text/css">
+		<link href="css/master_wy.css" rel="stylesheet" type="text/css">
+		<link href="css/debug.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div class="content">
+			<div class="forgetPsw">
+				<div class="forgetPswTop">
+					<div class="forgetPswMain">
+						<div class="forgetPsw-logo"></div>
+						<h4>擎天绿色低碳工业云</h4>
+						<span>|</span>
+						<span>找回密码</span>
+						<a href="javascript:;">返回首页</a>
+					</div>
+				</div>
+				<div class="form" >
+					<p>确认账号信息</p>
+					<div class="input">
+						<input type="text" placeholder="请确认注册邮箱/手机号">
+					</div>
+					<div class="inp">
+						<input type="text" placeholder="验证码">
+						<div class="verificationCode">
+							<img src="images/lj/yanzhengma.jpg" alt="">
+						</div>
+					</div>
+					<div class="next">下一步</div>
+				</div>
+				<div class="form" >
+					<p style="margin-bottom: 15px;">填写确认码</p>
+					<p style="line-height: 27px;">
+						确认码将发送至注册邮箱 <span>XXXXXXX@mail.com</span>，
+						<br>
+						请输入收到的验证码：
+					</p>
+					<div class="inp">
+						<input type="text" placeholder="验证码">
+						<div class="send ">发 送</div>
+					</div>
+					<div class="next" style="background:#bbb;">下一步</div>
+				</div>
+				<div class="form" >
+					<p>设置新密码</p>
+					<div class="input">
+						<input type="text" placeholder="输入新密码">
+						<div class="visible"></div>
+					</div>
+					<div class="input">
+						<input type="text" placeholder="确认新密码">
+						<div class="visible active"></div>
+					</div>
+					<div class="next" style="margin-top: 40px;">下一步</div>
+				</div>
+				<div class="form" >
+					<div class="successFind">
+						<img src="images/lj/findPswSuc.jpg" alt="">
+					</div>
+					<div class="next" style="margin-top: 40px;">返回首页</div>
+				</div>
+			</div>
+		</div>
+		<script src="../plugins/jquery-1.9.1.min.js"></script>
+		<script src="../plugins/perfect-scrollbar.jquery.js"></script>
+		<script src="../plugins/swiper.min.js"></script>
+		<script src="../plugins/angular.min.js"></script>
+		<script src="js/base.js"></script>
+		<script src="js/master.js"></script>
+		<script>
+			console.log($('.form'));
+            $('.form:gt(0)').hide();	//初始化  从第二个开始隐藏
+			$('.form:eq(0) .next').click(function () {
+				$(this).parent().hide().next().show();
+            });
+
+			var flag = true;		//添加一个节流阀  防止一直不停点击发送
+			var number,timer;
+            $('.form:eq(1) .send').click(function () {
+                if(flag){			//判断节流阀是否关闭
+                    flag = false;
+                    $('.form:eq(1) .next').css('background','#bbb');		//下一步的背景颜色
+                    $(this).html('<span>5</span>s 重新发送').addClass('active');		//
+                    number = $(this).find('span').html();
+                    console.log(number);
+                    timer = setInterval(function () {
+                        number-- ;
+                        $('.form:eq(1) .send').html("<span>"+number+"</span>s 重新发送");
+                        if(number == 0){
+                            $('.form:eq(1) .send').html('重新发送');
+                            $('.form:eq(1) .next').css('background','linear-gradient(to right,#18abff,#0099f0)')
+                            clearInterval(timer);
+                            flag = true;
+                        }
+                    },1000);
+                    $('.form:eq(1) .next').click(function () {
+                        if(number == 0){
+                            $(this).parent().hide().next().show();
+						}
+                    });
+				}
+            });
+
+            $('.form:eq(2) .next').click(function () {
+                $(this).parent().hide().next().show();
+            });
+
+            $('.visible').click(function () {
+				if($(this).hasClass('active')){
+				    $(this).removeClass('active');
+				}else{
+				    $(this).addClass('active');
+				}
+            });
+		</script>
+	</body>
+</html>

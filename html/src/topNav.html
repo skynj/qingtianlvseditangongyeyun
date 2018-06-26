@@ -1,0 +1,50 @@
+<div ng-class="{'noBanner':bannerdata.noBanner,'qt_top':true,'noSubNav':bannerdata.noSubNav}">
+	<div class="qt_topNav">
+		<a href="javascript:;" class="qt_logo"></a>
+		<a href="javascript:;" class="qt_logo3"></a>
+		<div class="qt_nav1">
+			<ul>
+				<li class="qt_navlist" ng-repeat="item in navdata" ng-class="{active:item.selected,moreSolve:item.checked}">
+					<a href="{{item.url}}">{{item.txt}}</a>
+					<div class="seclev">
+						<ul>
+							<li ng-repeat="inner in item.child"><a href="javascript:;">{{inner.word}}</a><i class="newIco" ng-if="inner.new"></i></li>
+						</ul>
+					</div>
+				</li>
+				<div class="clear"></div>
+			</ul>
+		</div>
+		<div class="morelev">
+			<div class="line"></div>
+			<ul class="morelevel">
+				<li class="morelist" ng-repeat="items in secdata">
+					<a href="javascript:;" class="listTit">{{items.tit}}</a>
+					<ul class="littlist">
+						<li ng-class="{active:inner.selected}" ng-repeat="inner in items.child"><a href="javascript:;">{{inner.word}}</a><i class="newIco" ng-if="inner.new"></i></li>
+					</ul>
+				</li>
+				<div class="clear"></div>
+			</ul>
+		</div>
+		<div class="qt_msg">
+			<a href="" class="qt_shop">应用商店</a>
+			<div class="qt_log">
+				<a href="" class="qt_borderR">登录</a>
+				<a href="">注册</a>
+				<div class="clear"></div>
+			</div>
+			<div class="qt_more">
+				<span></span>
+				<div class="qt_domain">
+					<ul>
+						<li ng-repeat="item in moredata" ng-class="{active:item.selected}">
+							<a href="{{item.url}}">{{item.txt}}</a>
+						</li>
+					</ul>
+					<p>服务咨询 95500转1</p>
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>擎天绿色低碳工业云</title>
+	<link href="css/layout/reset.css" rel="stylesheet" type="text/css">
+	<link href="css/layout/base.css" rel="stylesheet" type="text/css">
+	<link href="../plugins/perfect-scrollbar.min.css" rel="stylesheet" type="text/css">
+	<link href="../plugins/swiper.min.css" rel="stylesheet" type="text/css">
+	<link href="css/master_lj.css" rel="stylesheet" type="text/css">
+	<link href="css/master_zt.css" rel="stylesheet" type="text/css">
+	<link href="css/master_wy.css" rel="stylesheet" type="text/css">
+	<link href="css/debug.css" rel="stylesheet" type="text/css">
+</head>
+<body ng-app='app_qt' ng-controller='qtCtrl'>
+<div class="content" ng-controller='qtCtrlS'>
+	<div class="qt_top">
+		<topn-qt nav-data='topData' sec-data='secData' more-data='moreData'></topn-qt>
+		<div class="bannerTop"></div>
+	</div>
+	<div class="corePartner">
+		<div class="innerBlock">
+			<h1>核心合作伙伴</h1>
+			<div class="corePartnerList">
+				<div class="coreprev" ng-click="prev()"></div>
+				<div class="corenext" ng-click="next()"></div>
+				<div class="swiperWrapper" style="margin-left:8.5px">
+			      	<div class="swiperSlide" ng-repeat="(index,item) in logoData" ng-if="index%3==0">
+				      	<a href="{{item.link}}" class="core" ng-repeat="d in logoData | filterlogo : 'n' : index"><img ng-src="{{d.logoUrl}}"></a>	
+			      	</div>
+			    </div>
+				<div class="swiperPagination">
+					<span ng-repeat='(n,item) in swiperPagination' ng-class='{active:item.active==true}' ng-click="dot(n)"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="serviceRes">
+		<div class="innerBlock">
+			<h1>享受优质服务资源</h1>
+			<span class="industnetTit">我们为生态合作伙伴计划提供全方位的合作与支持，致力于帮助合作伙伴构建工业云的业务实践和解决方案</span>
+			<div class="serviceReslist">
+				<ul>
+					<li ng-repeat="item in resList">
+						<div class="serviceResImg" ng-style="{'background-image':'url({{item.imgUrl}})'}"></div>
+						<h3>{{item.head}}</h3>
+						<p>{{item.description}}</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="coopartner">
+		<div class="innerBlock">
+			<h1>邀请您成为我们的合伙伙伴</h1>
+			<p>专属合作伙伴拓展经理提供业务支持和商务支持，帮助您在云计算领域取得成功。客户沙龙、研讨会，行业展会，云栖大会等丰富的市场和营销机会。大量的技术培训赋能机会，快速提升合作伙伴云产品应用和技术服务能力。专项技术领域获得阿里云专业架构师团队的技术支持，在垂直市场获得领先优势。专属合作伙伴拓展经理提供业务支持和商务支持，帮助您在云计算领域取得成功。客户沙龙、研讨会，行业展会，云栖大会等丰富的市场和营销机会。大量的技术培训赋能机会，快速提升合作伙伴云产品应用和技术服务能力。</p>
+			<div class="coopartnerList">
+				<ul>
+					<li>
+						<div class="partner">
+							<i class="partnerIco partnerIco1"></i>
+							<span>咨询公司入驻</span>
+						</div>
+						<div class="partnerList">
+							<span>低碳培训</span>
+							<span>核查业务</span>
+							<br />
+							<span>节能减排</span>
+							<span>更多业务</span>
+						</div>
+					</li>
+					<li>
+						<div class="partner">
+							<i class="partnerIco partnerIco2"></i>
+							<span>中介公司入驻</span>
+						</div>
+						<div class="partnerList">
+							<span>市场托管</span>
+							<span>大宗撮合</span>
+							<span>更多业务</span>
+							<br />
+							<span>交易委托</span>
+							<span>金融服务</span>
+							<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+						</div>
+					</li>
+					<li>
+						<div class="partner">
+							<i class="partnerIco partnerIco3"></i>
+							<span>其他低碳领域公司入驻</span>
+						</div>
+						<div class="partnerList">
+							<span>欢迎联系我们！</span>
+							<br />
+							<span>为您提供专业服务和解决方案</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="contactUs">
+		<div class="innerBlock">
+			<h1>联系我们</h1>
+			<div class="contactWay">
+				<div class="contactIco phone f_left"><i></i></div>
+				<div class="contactTxt f_left">
+					<b>7&times;8小时电话咨询：130-0000-0000</b>
+					<em>商务负责人小白，随时为您提供全面的售前服务支持！</em>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="contactWay" style="margin-bottom:45px">
+				<div class="contactIco write f_left"><i></i></div>
+				<div class="contactTxt f_left">
+					<b>留下您的联系方式</b>
+					<em>我们在3个工作日电话回访</em>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="contactForm">
+				<span class="f_left">用户姓名</span>
+				<input type="text" class="f_left" />
+			</div>
+			<div class="contactForm">
+				<span class="f_left">联系电话</span>
+				<input type="text" class="f_left" />
+			</div>
+			<div class="contactForm">
+				<span class="f_left">公司名称</span>
+				<input type="text" class="f_left" />
+			</div>
+			<a href="javascript:;" class="contactBtn">提交信息</a>
+		</div>
+	</div>
+	<div class="rightLink">
+		<div class="consult">
+			<i></i>咨询电话
+		</div>
+		<div class="backtop"></div>
+	</div>
+	<bottom-qt></bottom-qt>
+</div>
+<script src="../plugins/jquery-1.9.1.min.js"></script>
+<script src="../plugins/perfect-scrollbar.jquery.js"></script>
+<script src="../plugins/angular.min.js"></script>
+<script src="../plugins/swiper.min.js"></script>
+<script src="js/base.js"></script>
+<script src="js/master.js"></script>
+<script src="../plugins/echarts.js"></script>
+<script type="text/javascript">
+	var alllogoData=[
+		{
+			logoUrl:'images/wy/coop7.png',
+			link:'javascript:;'
+		},
+		{
+			logoUrl:'images/wy/coop7.png',
+			link:'javascript:;'
+		},
+		{
+			logoUrl:'images/wy/coop7.png',
+			link:'javascript:;'
+		},
+		{
+			logoUrl:'images/wy/coop8.png',
+			link:'javascript:;'
+		},
+		{
+			logoUrl:'images/wy/coop8.png',
+			link:'javascript:;'
+		},
+		{
+			logoUrl:'images/wy/coop8.png',
+			link:'javascript:;'
+		},
+		{
+			logoUrl:'images/wy/coop9.png',
+			link:'javascript:;'
+		},
+		{
+			logoUrl:'images/wy/coop9.png',
+			link:'javascript:;'
+		},
+		{
+			logoUrl:'images/wy/coop9.png',
+			link:'javascript:;'
+		},
+		{
+			logoUrl:'images/wy/coop10.png',
+			link:'javascript:;'
+		},
+		{
+			logoUrl:'images/wy/coop10.png',
+			link:'javascript:;'
+		},
+		{
+			logoUrl:'images/wy/coop10.png',
+			link:'javascript:;'
+		},
+		{
+			logoUrl:'images/wy/coop8.png',
+			link:'javascript:;'
+		},
+		{
+			logoUrl:'images/wy/coop8.png',
+			link:'javascript:;'
+		},
+		{
+			logoUrl:'images/wy/coop8.png',
+			link:'javascript:;'
+		},
+		{
+			logoUrl:'images/wy/coop10.png',
+			link:'javascript:;'
+		},
+		{
+			logoUrl:'images/wy/coop10.png',
+			link:'javascript:;'
+		},
+		{
+			logoUrl:'images/wy/coop10.png',
+			link:'javascript:;'
+		},
+		{
+			logoUrl:'images/wy/coop8.png',
+			link:'javascript:;'
+		},
+		{
+			logoUrl:'images/wy/coop8.png',
+			link:'javascript:;'
+		},
+		{
+			logoUrl:'images/wy/coop8.png',
+			link:'javascript:;'
+		},
+		{
+			logoUrl:'images/wy/coop10.png',
+			link:'javascript:;'
+		},
+		{
+			logoUrl:'images/wy/coop10.png',
+			link:'javascript:;'
+		},
+		{
+			logoUrl:'images/wy/coop10.png',
+			link:'javascript:;'
+		},
+		{
+			logoUrl:'images/wy/coop8.png',
+			link:'javascript:;'
+		},
+		{
+			logoUrl:'images/wy/coop8.png',
+			link:'javascript:;'
+		},
+		{
+			logoUrl:'images/wy/coop8.png',
+			link:'javascript:;'
+		},
+		{
+			logoUrl:'images/wy/coop10.png',
+			link:'javascript:;'
+		},
+		{
+			logoUrl:'images/wy/coop10.png',
+			link:'javascript:;'
+		},
+		{
+			logoUrl:'images/wy/coop10.png',
+			link:'javascript:;'
+		}
+	];
+	appQt.filter('filterlogo',function (){
+		return function (d,a,b){
+			return d.slice(b,b+3);
+		}
+	});
+	appQt.controller('qtCtrlS',['$scope','addScroll','$timeout',function($scope,addScroll,$timeout){
+		$scope.swiperPagination = [];
+        for(var i=0 ;i<Math.ceil(alllogoData.length/12) ;i++){
+    		$scope.swiperPagination.push({active:false,num:i});
+        }
+        $scope.swiperPagination[0].active=true;
+        $scope.logoData=alllogoData;
+
+		var left=0;
+		var length=Math.ceil(alllogoData.length/12);
+		var index=0;
+		$scope.prev = function(){
+			left+=1200;
+			if(left>0){
+				left=-1200*(length-1);
+			}
+			index--;
+			if(index<0){
+				index=length-1;
+			}
+			$(".swiperWrapper").css("left",left+"px");
+			for(var i=0 ;i<Math.ceil(alllogoData.length/12) ;i++){
+	    		$scope.swiperPagination[i].active=false;
+	        }
+	        $scope.swiperPagination[index].active=true;
+		}
+
+		$scope.next = function(){
+			left-=1200;
+			if(left<-1200*(length-1)){
+				left=0;
+			}
+			index++;
+			if(index>(length-1)){
+				index=0;
+			}
+			$(".swiperWrapper").css("left",left+"px");
+			for(var i=0 ;i<Math.ceil(alllogoData.length/12) ;i++){
+	    		$scope.swiperPagination[i].active=false;
+	        }
+	        $scope.swiperPagination[index].active=true;
+		}
+
+		$scope.dot = function(n){
+			left=-1200*n;
+			$(".swiperWrapper").css("left",left+"px");
+			for(var i=0 ;i<Math.ceil(alllogoData.length/12) ;i++){
+	    		$scope.swiperPagination[i].active=false;
+	        }
+			$scope.swiperPagination[n].active=true;
+			index = n;
+		}
+		$scope.resList=[
+			{
+				imgUrl:'images/wy/pic1.png',
+				head:'技术资源',
+				description:'专属的技术支持、文案在此处专属的技术支持、文案在此处专属的技术支持、文案在此处专属的技术支持、文案在此处专属的技术支持、文案在此处'
+			},
+			{
+				imgUrl:'images/wy/pic2.png',
+				head:'行业经验',
+				description:'通过自研或者与华为合作，我们兼容各种新旧物联技术。通过在工厂中组建设备、监控与传感器网络，将整个工厂仿真到云上一个崭新'
+			},
+			{
+				imgUrl:'images/wy/pic3.png',
+				head:'客户成功',
+				description:'通过工业互联网，助理工鞥企业成就未来。通过工业互联网，助理工鞥企业成就未来。通过工业互联网，助理工鞥企业成就未来'
+			}
+		];
+	}]);
+</script>
+</body>
+</html>

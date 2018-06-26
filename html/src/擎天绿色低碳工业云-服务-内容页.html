@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>擎天绿色低碳工业云</title>
+		<link href="css/layout/reset.css" rel="stylesheet" type="text/css">
+		<link href="css/layout/base.css" rel="stylesheet" type="text/css">
+		<link href="../plugins/perfect-scrollbar.min.css" rel="stylesheet" type="text/css">
+		<link href="../plugins/swiper.min.css" rel="stylesheet" type="text/css">
+		<link href="css/master_lj.css" rel="stylesheet" type="text/css">
+		<link href="css/master_zt.css" rel="stylesheet" type="text/css">
+		<link href="css/master_wy.css" rel="stylesheet" type="text/css">
+		<link href="css/debug.css" rel="stylesheet" type="text/css">
+	</head>
+	<body ng-app='app_qt' ng-controller='qtCtrl'>
+		<div class="content" ng-controller='qtCtrlS'>
+			<topn-qt nav-data='topData' sec-data='secData' more-data='moreData'></topn-qt>
+			<topb-qt app-data='appData' banner-data='bannerData'></topb-qt>
+			<div class="qt_center">
+				<div class="innerBlock">
+					<div class="main">
+						<div class="serMain typeArea">
+							<div class="main-head">
+								<h1>程序名称文档开放平台</h1>
+								<p><span>2018-3-11</span><span class="ml20">擎天科技</span></p>
+							</div>
+							<div class="main-content">
+								<div class="img">
+									<img src="images/lj/img1.png" alt="">
+								</div>
+								<p>开放是目前的发展趋势，越来越多的产品走向开放。目前的网站不能靠限制用户离开来留住用户，开放的架构反而更增加了用户的粘性。在Web 2.0的浪潮到来之前，开放的API 甚至源代码主要体现在桌面应用上，而现在越来越多的Web应用面向开发者开放了API。具备分享、标准、去中心化、开放、模块化的Web 2.0站点，在为使用者带来价值的同时，更希望通过开放的API 来让站点提供的服务拥有更大的用户群和服务访问数量。</p>
+								<p>开放是目前的发展趋势，越来越多的产品走向开放。目前的网站不能靠限制用户离开来留住用户，开放的架构反而更增加了用户的粘性。在Web 2.0的浪潮到来之前，开放的API 甚至源代码主要体现在桌面应用上，而现在越来越多的Web应用面向开发者开放了API。具备分享、标准、去中心化、开放、模块化的Web 2.0站点，在为使用者带来价值的同时，更希望通过开放的API 来让站点提供的服务拥有更大的用户群和服务访问数量。</p>
+								<p>视频云技术提供商CC视频开放API接口，用户可以在自己的网站后台轻松完成视频的上传、视频播放控制操作，并可批量获取视频及平台信息。</p>
+							</div>
+							<div class="main-footer">
+								<div class="changePage">
+									上一个产品：<span>碳资产云版</span>
+								</div>
+								<div class="changePage mt10">
+									下一个产品：<span>程序名称文档开放平台</span>
+								</div>
+							</div>
+						</div>
+
+						<!--<div class="fixedNav">
+							<img src="images/lj/icon1.png" alt="">
+							<img src="images/lj/icon2.png" alt="">
+						</div>-->
+					</div>
+				</div>
+			</div>
+			<div class="rightLink">
+				<div class="consult">
+					<i></i>咨询电话
+				</div>
+				<div class="backtop"></div>
+			</div>
+			<bottom-qt></bottom-qt>
+		</div>
+		<script src="../plugins/jquery-1.9.1.min.js"></script>
+		<script src="../plugins/perfect-scrollbar.jquery.js"></script>
+		<script src="../plugins/swiper.min.js"></script>
+		<script src="../plugins/angular.min.js"></script>
+		<script src="js/base.js"></script>
+		<script src="js/master.js"></script>
+		<script type="text/javascript">
+			appQt.controller('qtCtrlS',['$scope','addScroll','$timeout',function($scope,addScroll,$timeout){
+				$scope.appData=[
+					{name:'低碳服务',url:'javascript:;'},
+					{name:'环保服务',url:'javascript:;'},
+					{name:'节能服务',url:'javascript:;'},
+					{name:'金融服务',url:'javascript:;'},
+					{name:'工业专区',url:'javascript:;'},
+					{name:'擎天专区',url:'javascript:;',new:true},
+				];
+                $scope.bannerData={
+					banner:[
+						{
+							imgUrl:'./images/zt/qt_bannerS.png',
+							url:'javascript:;',
+							search:true,
+							txt:{
+								chinese:'服务',
+								english:'SERVICE'
+							}
+						}
+					]
+                };
+			}]);
+		</script>
+	</body>
+</html>

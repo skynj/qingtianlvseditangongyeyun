@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>擎天绿色低碳工业云</title>
+		<link href="css/layout/reset.css" rel="stylesheet" type="text/css">
+		<link href="css/layout/base.css" rel="stylesheet" type="text/css">
+		<link href="../plugins/perfect-scrollbar.min.css" rel="stylesheet" type="text/css">
+		<link href="../plugins/swiper.min.css" rel="stylesheet" type="text/css" />
+		<link href="../plugins/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<link href="css/master_lj.css" rel="stylesheet" type="text/css">
+		<link href="css/master_zt.css" rel="stylesheet" type="text/css">
+		<link href="css/master_wy.css" rel="stylesheet" type="text/css">
+		<link href="css/debug.css" rel="stylesheet" type="text/css">
+	</head>
+	<body ng-app='app_qt' ng-controller='qtCtrl'>
+		<div class="content" ng-controller='qtCtrlS'>
+			<topn-qt nav-data='topData' sec-data='secData' more-data='moreData'></topn-qt>
+			<topb-qt app-data='appData' banner-data='bannerData'></topb-qt>
+			<div class="qt_center yy_center">
+				<div class="innerBlock">
+					<div class="main">
+						<div class="yy_deinfo">							
+							<div class="yy_message">
+								<div class="cp_img" style="background-image:url(images/zt/cp_list1.png)"></div>
+								<div class="cp_text">
+									<a href="javascript:;" class="cp_head">碳资产云版</a>
+									<div class="cp_details">
+										<a href="javascript:;" class="cp_author">擎天科技</a>
+										<div class="cp_comments f_right">评论<span>8266</span>条</div>
+										<div class="cp_grade f_right"><span>产品热度</span><span class="cp_star"><em style="width: 80%;"></em></span></div>
+									</div>
+									<p class="cp_description">碳资产云版天气日志分析业务迁移到数加MaxCompute后，开发效率提升了超过5倍，存储和计算费用节省了70%，每天处理分析2TB的日志数据，更高效的赋能其个性化运营策略3213</p>
+									<div class="cp_more">
+										<a href="javascript:;" class="yy_judge">兑换</a>
+										<a href="javascript:;" class="yy_scription">订阅/续费</a>
+										<div class="cp_money"><strong>299</strong><span>RMB/年</span></div>
+									</div>
+								</div>
+							</div>
+							<div class="yy_detxt">
+								<div class="yy_moreL tab tabL">
+									<ul>
+										<li class="active">应用详情</li>
+										<li>用户评价</li>
+									</ul>
+								</div>
+								<div class="tabCon yy_article">
+									<div class="cp_head">碳资产云版说明</div>
+									<div class=" yy_con">
+										<p>基于互联网的应用正变得越来越普及，在这个过程中，有更多的站点将自身的资源开放给开发者来调用。对外提供的API 调用使得站点之间的内容关联性更强，同时这些开放的平台也为用户、开发者和中小网站带来了更大的价值。</p>
+										<p>开放是目前的发展趋势，越来越多的产品走向开放。目前的网站不能靠限制用户离开来留住用户，开放的架构反而更增加了用户的粘性。在Web 2.0的浪潮到来之前，开放的API 甚至源代码主要体现在桌面应用上，而现在越来越多的Web应用面向开发者开放了API。具备分享、标准、去中心化、开放、模块化的Web 2.0站点，在为使用者带来价值的同时，更希望通过开放的API 来让站点提供的服务拥有更大的用户群和服务访问数量。</p>
+										<p>站点在推出基于开放API 标准的产品和服务后，无需花费力气做大量的市场推广，只要提供的服务或应用出色易用，其他站点就会主动将开放API 提供的服务整合到自己的应用之中。同时，这种整合API 带来的服务应用，也会激发更多富有创意的应用产生。为了对外提供统一的API 接口，需要对开发者开放资源调用API 的站点提供开放统一的API接口环境，来帮助使用者访问站点的功能和资源。当然，开放API 的站点为第三方的开发者提供良好的社区支持也是很有意义的，这有助于吸引更多的技术人员参与到开放的开发平台中，并开发出更为有趣的第三方应用。</p>
+									</div>
+								</div>
+								<div class="orderApi">
+									<h5>订购本应用同时订购API（暂时不支持）</h5>
+									<div class="orderApiList">
+										<ul>
+											<li ng-repeat="items in apiList">
+												<div class="apicon" ng-style="{'background-image':'url({{items.logoUrl}})'}"></div>
+												<span>{{items.txt}}</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="tabCon" style="display: none;">
+									<ul>
+										<li class="yy_cellCom" ng-repeat="item in commentsData|orderBy:'date':true">
+											<div class="yy_left">
+												<div class="yy_left1">
+													<div class="yy_ava" ng-style="{'background-image':'url({{item.avaUrl}})'}"></div>
+													<span>{{item.date}}</span>
+												</div>
+												<div class="yy_left2">
+													<div class="cp_author">{{item.name}}</div>
+													<span>用户订购的版本</span>
+												</div>
+											</div>
+											<div class="yy_right">
+												<div class="cp_money">
+													<span>用户评分</span>
+													<strong>{{item.grade}}</strong>
+													<span>分</span>
+												</div>
+												<div class="cp_description">{{item.description}}</div>
+											</div>
+										</li>
+									</ul>
+									<div class="cp_pagination">
+										<ul>
+											<li class="cp_pgLeft"></li>
+											<li class="cp_num active">1</li>
+											<li title="向前5页" class="cp_pgLess"></li>
+											<li class="cp_num">2</li>
+											<li class="cp_num">3</li>
+											<li class="cp_num">4</li>
+											<li class="cp_num">5</li>
+											<li class="cp_num">6</li>
+											<li title="向后5页" class="cp_pgMore"></li>
+											<li class="cp_num">16</li>
+											<li class="cp_pgRight active"></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="yy_billboard">
+						<div class="yy_title">APP推荐榜</div>
+						<div class="yy_billList">
+							<ul>
+								<li ng-repeat="(index,item) in appList|orderBy:'hot':true" ng-class="{'yy_topTh':index<3}">
+									<span class="yy_position">{{index+1}}</span>
+									<a href="" class="yy_img" ng-style="{'background-image':'url({{item.logoUrl}})'}"></a>
+									<div class="yy_text">
+										<a href="">{{item.name}}</a>
+										<span class="cp_star"><em style="width: {{item.hot*20}}%;"></em>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="rightLink">
+				<div class="consult">
+					<i></i>咨询电话
+				</div>
+				<div class="backtop"></div>
+			</div>
+			<bottom-qt></bottom-qt>
+			<div class="exchangePop" style="display:none">
+				<div class="exchangePoptit">邀请兑换码</div>
+				<div class="exchangeClose"></div>
+				<div class="exchangeCon">
+					<div class="exchangeForm exchangeForm1" style="display:flex">
+						<div class="exchangeItem">
+							<span class="exchangeTips">此邀请码无效</span>
+							<input type="text" class="exchangeInp" />
+							<span class="exchangeTxt">此邀请码可以兑换：擎天企业碳资产1年有效期</span>
+						</div>
+					</div>
+					<div class="exchangeForm exchangeForm2">
+						<div class="exchangeItem alignCenter">
+							<div class="exchangeItemico deploy-animate">
+								<div class="exchangeIco" style="background:#f1faff;transform: rotate(30deg)"></div>
+								<div class="exchangeIco" style="background:#e2f5ff;transform: rotate(60deg)"></div>
+								<div class="exchangeIco" style="background:#d3efff;transform: rotate(90deg)"></div>
+								<div class="exchangeIco" style="background:#c1e8ff;transform: rotate(120deg)"></div>
+								<div class="exchangeIco" style="background:#afe2ff;transform: rotate(150deg)"></div>
+								<div class="exchangeIco" style="background:#98daff;transform: rotate(180deg)"></div>
+								<div class="exchangeIco" style="background:#84d2ff;transform: rotate(210deg)"></div>
+								<div class="exchangeIco" style="background:#71cbff;transform: rotate(240deg)"></div>
+								<div class="exchangeIco" style="background:#60c5ff;transform: rotate(270deg)"></div>
+								<div class="exchangeIco" style="background:#51c0ff;transform: rotate(300deg)"></div>
+								<div class="exchangeIco" style="background:#45bbff;transform: rotate(330deg)"></div>
+								<div class="exchangeIco" style="background:#fbfeff;transform: rotate(360deg)"></div>
+							</div>
+							<span class="exchangeTxt">正在部署中......</span>
+						</div>
+						<div class="exchangeItem alignCenter">
+							<div class="exchangeItemico"></div>
+							<span class="exchangeTxt">应用部署成功</span>
+						</div>
+						<div class="exchangeItem alignCenter">
+							<div class="exchangeItemico"></div>
+							<span class="exchangeTxt">抱歉，应用部署失败，请联系客服</span>
+						</div>
+					</div>
+					<div class="exchangeBtn">
+						<a href="javascript:;" class="submit">兑换</a>
+						<a href="javascript:;" class="quit">取消</a>
+						<a href="javascript:;" class="check" style="display:none">查看</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../plugins/jquery-1.9.1.min.js"></script>
+		<script src="../plugins/perfect-scrollbar.jquery.js"></script>
+		<script src="../plugins/angular.min.js"></script>
+		<script src="../plugins/swiper.min.js"></script>
+		<script src="js/base.js"></script>
+		<script src="js/master.js"></script>
+		<script type="text/javascript">
+			appQt.controller('qtCtrlS',['$scope','addScroll','$timeout',function($scope,addScroll,$timeout){
+				$scope.appData=[
+					{name:'低碳APP',url:'javascript:;'},
+					{name:'环保APP',url:'javascript:;'},
+					{name:'金服APP',url:'javascript:;'},
+					{name:'税服APP',url:'javascript:;'},
+					{name:'擎天专区',url:'javascript:;'},
+					{name:'其它分类',url:'javascript:;'},
+				];
+				$scope.bannerData={
+					banner:[
+						{
+							imgUrl:'./images/wy/banner1.png',
+							url:'javascript:;',
+							txt:{
+								chinese:'应用商店',
+								english:'APP STORE'
+							},
+							search:true
+						}
+					]
+				};
+				$scope.apiList=[
+					{logoUrl:'images/wy/ico24.png',txt:'其他企业碳资产'},
+					{logoUrl:'images/wy/ico25.png',txt:'其他企业碳资产'},
+					{logoUrl:'images/wy/ico26.png',txt:'其他企业碳资产'},
+					{logoUrl:'images/wy/ico26.png',txt:'其他企业碳资产'},
+					{logoUrl:'images/wy/ico26.png',txt:'其他企业碳资产'}
+				];
+				$scope.appList=[
+					{logoUrl:'images/zt/axs.png',name:'安迅思',hot:5},
+					{logoUrl:'images/zt/qyt.png',name:'企业碳资产',hot:4},
+					{logoUrl:'images/zt/axsH.png',name:'一天绿色金融',hot:2},
+					{logoUrl:'images/zt/axsH.png',name:'安迅思高级版',hot:3},
+					{logoUrl:'images/zt/qyt.png',name:'北京环交所',hot:3},
+					{logoUrl:'images/zt/qyt.png',name:'碳交易宝典',hot:2},
+					{logoUrl:'images/zt/qyt.png',name:'兰州低碳云',hot:2},
+					{logoUrl:'images/zt/qyt.png',name:'环保税助手',hot:2},
+					{logoUrl:'images/zt/qyt.png',name:'环保税客户端',hot:2},
+					{logoUrl:'images/zt/qyt.png',name:'一天绿色金融国际版',hot:2},
+				];
+				$scope.commentsData=[
+					{name:'安迅思',date:'2018-3-14',grade:9.7,avaUrl:'images/zt/yy_ava1.png',description:'碳资产云版天气日志分析业务迁移到数加MaxCompute后，开发效率提升了超过5倍，存储和计算费用节省了70%，每天处理分析2TB的日志数据，更高效的赋能其个性化运营策略',url:'javascript:;'},
+					{name:'安迅思',date:'2018-3-12',grade:6.9,avaUrl:'images/zt/yy_ava3.png',description:'碳资产云版天气日志分析业务迁移到数加MaxCompute后，开发效率提升了超过5倍，存储和计算费用节省了70%，每天处理分析2TB的日志数据，更高效的赋能其个性化运营策略',url:'javascript:;'},
+					{name:'Destiny',date:'2018-3-13',grade:8.6,avaUrl:'images/zt/yy_ava2.png',description:'碳资产云版天气日志分析业务迁移到数加MaxCompute后，开发效率提升了超过5倍，存储和计算费用节省了70%，每天处理分析2TB的日志数据，更高效的赋能其个性化运营策略',url:'javascript:;'},
+					{name:'安迅思',date:'2018-3-12',grade:9.1,avaUrl:'images/zt/yy_ava4.png',description:'碳资产云版天气日志分析业务迁移到数加MaxCompute后，开发效率提升了超过5倍，存储和计算费用节省了70%，每天处理分析2TB的日志数据，更高效的赋能其个性化运营策略',url:'javascript:;'}
+				];
+				convert();
+				function convert(){
+					var input_state = true;//判断兑换码是否有效
+					var exchange = true;//判断兑换状态正确与否
+					if(input_state){
+						$(".submit").click(function(){
+							$(".exchangePoptit").html("兑换成功");
+							$(".exchangeForm1").hide();
+							$(".exchangeForm2").addClass("loading");
+							$(".exchangeBtn a").hide();
+							$(".check").show();
+							setInterval(function(){
+								$(".exchangeForm2").removeClass("loading");
+								if(exchange){
+									$(".exchangeForm2").addClass("success");
+								}else{
+									$(".exchangeForm2").addClass("warning");
+								}
+							},2000);
+						});
+					}else{
+						$(".submit").click(function(){
+							$(".exchangeItem").addClass("error");
+						});	
+					}
+					$(".exchangeClose").click(function(){
+						$(".exchangePop").hide();
+					});
+				}
+				$(".yy_judge").click(function(){
+					$(".exchangePop").show();
+				});
+			}]);
+		</script>
+	</body>
+</html>

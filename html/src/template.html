@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>擎天绿色低碳工业云</title>
+	<link href="css/layout/reset.css" rel="stylesheet" type="text/css">
+	<link href="css/layout/base.css" rel="stylesheet" type="text/css">
+	<link href="../plugins/perfect-scrollbar.min.css" rel="stylesheet" type="text/css">
+	<link href="../plugins/swiper.min.css" rel="stylesheet" type="text/css">
+	<link href="css/master_lj.css" rel="stylesheet" type="text/css">
+	<link href="css/master_zt.css" rel="stylesheet" type="text/css">
+	<link href="css/master_wy.css" rel="stylesheet" type="text/css">
+	<link href="css/debug.css" rel="stylesheet" type="text/css">
+</head>
+<body ng-app='app_qt' ng-controller='qtCtrl'>
+<div class="content">
+	<topn-qt nav-data='topData' sec-data='secData' more-data='moreData' banner-data='bannerData'></topn-qt>
+	<topb-qt app-data='appData' banner-data='bannerData'></topb-qt>
+	<div class="qt_center">
+		<div class="innerBlock">
+			<div class="main">
+				
+			</div>
+		</div>
+	</div>
+	<div class="rightLink">
+		<div class="consult">
+			<i></i>咨询电话
+		</div>
+		<div class="backtop"></div>
+	</div>
+	<bottom-qt></bottom-qt>
+</div>
+<script src="../plugins/jquery-1.9.1.min.js"></script>
+<script src="../plugins/perfect-scrollbar.jquery.js"></script>
+<script src="../plugins/angular.min.js"></script>
+<script src="../plugins/swiper.min.js"></script>
+<script src="js/base.js"></script>
+<script src="js/master.js"></script>
+<script type="text/javascript">
+	appQt.controller('qtCtrl',['$scope','addScroll','$timeout',function($scope,addScroll,$timeout){
+		$timeout(function () {
+            addScroll.scrolls();
+        }, 500);
+        
+    	//头部菜单配置
+        $scope.topData = [
+			{
+				txt:'产品',
+				url:'javascript:;',
+				child:[
+					{word:'企业碳资产',new:true},
+					{word:'安迅思'},
+					{word:'撮合市场'}
+				]
+			},
+			{
+				txt:'服务',
+				url:'javascript:;',
+				child:[
+					{word:'企业碳资产',new:true},
+					{word:'安迅思'},
+					{word:'撮合市场'}
+				]
+			},
+			{
+				txt:'案例',
+				url:'javascript:;',
+				checked:true,
+				child:[
+					{word:'企业碳资产',new:true},
+					{word:'安迅思'},
+					{word:'撮合市场'}
+				]
+			},
+			{
+				txt:'解决方案',
+				url:'javascript:;',
+				checked:true,
+				child:[
+					{word:'企业碳资产',new:true},
+					{word:'安迅思'},
+					{word:'撮合市场'}
+				]
+			},
+			{
+				txt:'开放平台',
+				url:'javascript:;',
+				child:[
+					{word:'企业碳资产',new:true},
+					{word:'安迅思'},
+					{word:'撮合市场'}
+				]
+			},
+			{
+				txt:'合作伙伴',
+				url:'javascript:;',
+				child:[
+					{word:'企业碳资产',new:true},
+					{word:'安迅思'},
+					{word:'撮合市场'}
+				]
+			}
+		];
+		$scope.secData = [
+			{
+				tit:'解决方案1',
+				child:[
+					{word:'解决方案1',selected:true,new:true},
+					{word:'解决方案1'},
+					{word:'解决方案1'},
+					{word:'解决方案1'}
+				]
+			},
+			{
+				tit:'解决方案1',
+				child:[
+					{word:'解决方案1'},
+					{word:'解决方案1'},
+					{word:'解决方案1',new:true},
+					{word:'解决方案1'}
+				]
+			},
+			{
+				tit:'解决方案1',
+				child:[
+					{word:'解决方案1'},
+					{word:'解决方案1',new:true},
+					{word:'解决方案1',new:true},
+					{word:'解决方案1'}
+				]
+			},
+			{
+				tit:'解决方案1',
+				child:[
+					{word:'解决方案1',new:true},
+					{word:'解决方案1'},
+					{word:'解决方案1'},
+					{word:'解决方案1'}
+				]
+			},
+			{
+				tit:'解决方案1',
+				child:[
+					{word:'解决方案1',new:true},
+					{word:'解决方案1'},
+					{word:'解决方案1'},
+					{word:'解决方案1'}
+				]
+			}
+		];
+		$scope.moreData=[
+			{txt:'资讯中心',url:'javascript:;',selected:true},
+			{txt:'应用商店',url:'javascript:;'},
+			{txt:'关于我们',url:'javascript:;'},
+			{txt:'其他解决方案',url:'javascript:;'},
+			{txt:'Q&A',url:'javascript:;'},
+		];
+		$scope.appData=[
+			{name:'低碳APP',description:'简单的文字说明',url:'javascript:;'},
+			{name:'环保APP',description:'简单的文字说明',url:'javascript:;'},
+			{name:'金服APP',description:'简单的文字说明',url:'javascript:;'},
+			{name:'税服APP',description:'简单的文字说明',url:'javascript:;'},
+			{name:'未分类组',description:'简单的文字说明',url:'javascript:;'},
+			{name:'擎天专区',description:'简单的文字说明',url:'javascript:;',new:true},
+		];
+		$scope.bannerData={
+			noBanner:true,
+			noSubNav:true,
+			txtWhite:true,
+			txt:{
+				chinese:'资讯中心',
+				english:'CONSULTATION'
+			},
+			linerGradient:{
+				startColor:'#0837A8',
+				endColor:'#0CA2FD'
+			} 
+        };
+	}]);
+</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>擎天绿色低碳工业云</title>
+	<link href="css/layout/reset.css" rel="stylesheet" type="text/css">
+	<link href="css/layout/base.css" rel="stylesheet" type="text/css">
+	<link href="../plugins/perfect-scrollbar.min.css" rel="stylesheet" type="text/css">
+	<link href="../plugins/swiper.min.css" rel="stylesheet" type="text/css">
+	<link href="../plugins/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="css/master_lj.css" rel="stylesheet" type="text/css">
+	<link href="css/master_zt.css" rel="stylesheet" type="text/css">
+	<link href="css/master_wy.css" rel="stylesheet" type="text/css">
+	<link href="css/debug.css" rel="stylesheet" type="text/css">
+</head>
+<body ng-app='app_qt' ng-controller='qtCtrl'>
+<div class="content" ng-controller='qtCtrlS'>
+	<topn-qt nav-data='topData' sec-data='secData' more-data='moreData' banner-data='bannerData'></topn-qt>
+	<topb-qt app-data='appData' banner-data='bannerData'></topb-qt>
+	<div class="qt_center">
+		<div class="innerBlock">
+			<div class="main" style="background:#fafafa">
+				<div class="service">
+					<img src="images/hotline.jpg" style="display:block;margin:auto">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="rightLink">
+		<div class="scan">
+			<i></i>扫一扫
+			<div class="scanCode">
+				<div class="scanClose"></div>
+				<span style="margin-top:33px">扫码关注擎天公众号</span>
+				<img src="images/wy/code.png">
+				<span>绿色低碳工业互联网知识</span>
+			</div>
+		</div>
+		<div class="backtop"></div>
+	</div>
+	<bottom-qt></bottom-qt>
+</div>
+<script src="../plugins/jquery-1.9.1.min.js"></script>
+<script src="../plugins/perfect-scrollbar.jquery.js"></script>
+<script src="../plugins/angular.min.js"></script>
+<script src="../plugins/swiper.min.js"></script>
+<script src="js/base.js"></script>
+<script src="js/master.js"></script>
+<script type="text/javascript">
+	appQt.controller('qtCtrlS',['$scope','addScroll','$timeout',function($scope,addScroll,$timeout){
+		$scope.appData=[
+			{name:'低碳APP',description:'简单的文字说明',url:'javascript:;'},
+			{name:'环保APP',description:'简单的文字说明',url:'javascript:;'},
+			{name:'金服APP',description:'简单的文字说明',url:'javascript:;'},
+			{name:'税服APP',description:'简单的文字说明',url:'javascript:;'},
+			{name:'未分类组',description:'简单的文字说明',url:'javascript:;'},
+			{name:'擎天专区',description:'简单的文字说明',url:'javascript:;',new:true},
+		];
+		$scope.bannerData={
+			noBanner:true,
+			noSubNav:true,
+			txtWhite:true,
+			txt:{
+				chinese:'客服热线',
+				english:'Customer Service Hotline'
+			},
+			linerGradient:{
+				startColor:'#0837A8',
+				endColor:'#0CA2FD'
+			} 
+        };
+		closeCode();
+		function closeCode(){
+			var qq=null;
+			$(".scan").hover(function(){
+			    $(".scanCode").show();
+				clearTimeout(qq);
+			},function(){
+				clearTimeout(qq);
+			    qq=setTimeout(function () {
+					$(".scanCode").hide();
+			    }, 200);
+			});
+			$(".scanClose").click(function(){
+				$(".scanCode").hide();
+			});
+		}
+	}]);
+</script>
+</body>
+</html>

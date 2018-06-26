@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>擎天绿色低碳工业云</title>
+		<link href="css/layout/reset.css" rel="stylesheet" type="text/css">
+		<link href="css/layout/base.css" rel="stylesheet" type="text/css">
+		<link href="../plugins/perfect-scrollbar.min.css" rel="stylesheet" type="text/css">
+		<link href="../plugins/swiper.min.css" rel="stylesheet" type="text/css">
+		<link href="css/master_lj.css" rel="stylesheet" type="text/css">
+		<link href="css/master_zt.css" rel="stylesheet" type="text/css">
+		<link href="css/master_wy.css" rel="stylesheet" type="text/css">
+		<link href="css/debug.css" rel="stylesheet" type="text/css">
+	</head>
+	<body ng-app='app_qt' ng-controller='qtCtrl'>
+		<div class="content" ng-controller='qtCtrlS'>
+			<topn-qt nav-data='topData' sec-data='secData' more-data='moreData'></topn-qt>
+			<topb-qt app-data='appData' banner-data='bannerData'></topb-qt>
+			<div class="qt_center">
+				<div class="innerBlock">
+					<div class="main">
+						<div class="serMain typeArea personalCenter accountSafe">
+							<div class="userinfo account">
+								<p><label>邮件地址</label><span>example@qq.com</span></p>
+								<p><label>手机号码</label><span>177 5566 6655</span></p>
+								<p><label>密码服务</label><span class="safeBtn">安全</span></p>
+							</div>
+							<div class="accountRedact">
+								<div class="redact">编辑</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="rightLink">
+				<div class="consult">
+					<i></i>咨询电话
+				</div>
+				<div class="backtop"></div>
+			</div>
+			<bottom-qt></bottom-qt>
+		</div>
+		<script src="../plugins/jquery-1.9.1.min.js"></script>
+		<script src="../plugins/perfect-scrollbar.jquery.js"></script>
+		<script src="../plugins/swiper.min.js"></script>
+		<script src="../plugins/angular.min.js"></script>
+		<script src="js/base.js"></script>
+		<script src="js/master.js"></script>
+		<script type="text/javascript">
+			appQt.controller('qtCtrlS',['$scope','addScroll','$timeout',function($scope,addScroll,$timeout){
+				$scope.appData=[
+					{name:'个人信息',url:'javascript:;'},
+					{name:'账户安全',url:'javascript:;'},
+					{name:'企业账号',url:'javascript:;'}
+				];
+                $scope.bannerData={
+					banner:[
+						{
+							imgUrl:'./images/zt/qt_bannerAC.png',
+							url:'javascript:;',
+							txt:{
+								chinese:'个人中心',
+								english:'ACCOUNT'
+							},
+							search:true
+						}
+					]
+                };
+			}]);
+		</script>
+	</body>
+</html>

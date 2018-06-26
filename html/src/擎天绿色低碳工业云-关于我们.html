@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>擎天绿色低碳工业云</title>
+	<link href="css/layout/reset.css" rel="stylesheet" type="text/css">
+	<link href="css/layout/base.css" rel="stylesheet" type="text/css">
+	<link href="../plugins/perfect-scrollbar.min.css" rel="stylesheet" type="text/css">
+	<link href="../plugins/swiper.min.css" rel="stylesheet" type="text/css">
+	<link href="css/master_lj.css" rel="stylesheet" type="text/css">
+	<link href="css/master_zt.css" rel="stylesheet" type="text/css">
+	<link href="css/master_wy.css" rel="stylesheet" type="text/css">
+	<link href="css/debug.css" rel="stylesheet" type="text/css">
+</head>
+<body ng-app='app_qt' ng-controller='qtCtrl'>
+<div class="content" ng-controller='qtCtrlS'>
+	<div class="qt_top">
+		<topn-qt nav-data='topData' sec-data='secData' more-data='moreData'></topn-qt>
+		<div class="bannerTop"></div>
+	</div>
+	<div class="knowledgeSolu">
+		<div class="innerBlock">
+			<h1>中国擎天软件 专业低碳解决方案</h1>
+			<span class="industnetTit">我们为生态合作伙伴计划提供全方位的合作与支持，致力于帮助合作伙伴构建基于工业云的业务实践和解决方案。我们为生态合作伙伴计划提供全方位的合作与支持，致力于帮助合作伙伴构建基于工业云的业务实践和解决方案。</span>
+			<div class="knowledgeSolulist">
+				<ul>
+					<li ng-repeat="item in solveList">
+						<h3>{{item.head}}</h3>
+						<div class="knowledgeSoluImg" ng-style="{'background-image':'url({{item.imgUrl}})'}"><img src="{{item.icoUrl}}"></div>
+					</li>
+				</ul>
+			</div>
+			<a href="javascript:;" class="solveBtn"><i></i>中国擎天软件</a>
+		</div>
+	</div>
+	<div class="advantChar">
+		<div class="innerBlock">
+			<h1>我们的优势与特色</h1>
+			<span class="industnetTit">擎天低碳不仅仅是交付一个软件，而是提供整套的解决方案</span>
+			<div class="advantCharlist">
+				<ul>
+					<li ng-repeat="item in advList">
+						<div class="advantCharImg" ng-style="{'background-image':'url({{item.imgUrl}})'}"></div>
+						<h3>{{item.head}}</h3>
+						<p>{{item.description}}</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="rightLink">
+		<div class="consult">
+			<i></i>咨询电话
+		</div>
+		<div class="backtop"></div>
+	</div>
+	<bottom-qt></bottom-qt>
+</div>
+<script src="../plugins/jquery-1.9.1.min.js"></script>
+<script src="../plugins/perfect-scrollbar.jquery.js"></script>
+<script src="../plugins/angular.min.js"></script>
+<script src="../plugins/swiper.min.js"></script>
+<script src="js/base.js"></script>
+<script src="js/master.js"></script>
+<script src="../plugins/echarts.js"></script>
+<script type="text/javascript">
+	appQt.controller('qtCtrlS',['$scope','addScroll','$timeout',function($scope,addScroll,$timeout){
+		$scope.solveList=[
+			{
+				head:'机构碳资产',
+				icoUrl:'images/wy/pic13.png',
+				imgUrl:'images/wy/pic10.png'
+			},
+			{
+				head:'企业碳资产',
+				icoUrl:'images/wy/pic14.png',
+				imgUrl:'images/wy/pic11.png'
+			},
+			{
+				head:'edc1.0',
+				icoUrl:'images/wy/pic15.png',
+				imgUrl:'images/wy/pic12.png'
+			}
+		];
+		$scope.advList=[
+			{
+				imgUrl:'images/wy/ico15.png',
+				head:'专业承诺',
+				description:'专属的技术支持、文案在此处专属的技术支持、文案在此处专属的技术支持、文案在此处专属的技术支持、文案在此处专属的技术支持、文案在此处'
+			},
+			{
+				imgUrl:'images/wy/ico16.png',
+				head:'服务项目',
+				description:'专属的技术支持、文案在此处专属的技术支持、文案在此处专属的技术支持、文案在此处专属的技术支持、文案在此处专属的技术支持'
+			},
+			{
+				imgUrl:'images/wy/ico17.png',
+				head:'版本升级',
+				description:'通过工业互联网，助理工鞥企业成就未来。通过工业互联网，助理工鞥企业成就未来。通过工业互联网，助理工鞥企业成就未来'
+			}
+		];
+	}]);
+</script>
+</body>
+</html>

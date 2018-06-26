@@ -1,0 +1,207 @@
+var appQt = angular.module('app_qt',[]);
+
+//公共服务方法
+appQt.factory('addScroll',function(){
+	return {
+		scrolls:function(){
+			if($('.addScroll').length>0){
+				$(".addScroll").perfectScrollbar();
+			}
+		}
+	}
+})
+
+//头部组件
+appQt.directive('topnQt',function(){
+	return{
+		restrict:'E',
+		replace:true,
+		scope:{
+			curClass:'@curClass',
+			navdata:'=navData',
+			secdata:'=secData',
+			moredata:'=moreData',
+			bannerdata:'=bannerData'
+		},
+		templateUrl:'topNav.html',
+		link:function(scope,ele,attr){
+			$('body').on('click','.qt_nav1 li',function(){
+				if($(this).hasClass('active')){
+					$(this).removeClass('active');
+					$(".seclev").hide();
+					$(".morelev").hide();
+				}else{
+					$('.qt_nav1 li').removeClass('active');
+					$(this).addClass('active');
+					$(".seclev").hide();
+					$(".morelev").hide();
+					$(this).find(".seclev").show();
+					if($(this).hasClass("moreSolve")){
+						$(".seclev").hide();
+						$(".morelev").show();
+					}
+				}
+			});
+			$('body').on('click','.qt_domain li',function(){
+				$(this).addClass('active').siblings().removeClass('active');
+				$(ele).addClass('active');
+			});
+			$('body').on('click','.qt_more span',function(){
+				$(this).addClass('open');
+				$(ele).find('.qt_domain').slideDown();
+			})
+			$('body').on('click','.qt_more span.open',function(){
+				$(ele).find('.qt_domain').slideUp(function(){
+					$('.qt_more span.open').removeClass('open');
+				});
+			});
+			$('body').on('click','.qt_shop,.qt_log a',function(){
+				$(this).addClass('active').siblings().removeClass('active');
+				$(ele).addClass('active');
+			});
+		}
+	}
+})
+//头部组件
+appQt.directive('topbQt',function(){
+	return{
+		restrict:'E',
+		replace:true,
+		scope:{
+			curClass:'@curClass',
+			appdata:'=appData',
+			bannerdata:'=bannerData',
+		},
+		templateUrl:'topBanner.html',
+		link:function(scope,ele,attr){
+			
+		}
+	}
+})
+
+//底部组件
+appQt.directive('bottomQt',function(){
+	return{
+		restrict:'E',
+		templateUrl:'bottom.html',
+	}
+})
+appQt.controller('qtCtrl',['$scope','addScroll','$timeout',function($scope,addScroll,$timeout){
+	$timeout(function () {
+        addScroll.scrolls();
+    }, 500);
+    
+	//头部菜单配置
+    $scope.topData = [
+		{
+			txt:'产品',
+			url:'javascript:;',
+			child:[
+				{word:'企业碳资产',new:true},
+				{word:'安迅思'},
+				{word:'撮合市场'}
+			]
+		},
+		{
+			txt:'服务',
+			url:'javascript:;',
+			child:[
+				{word:'企业碳资产',new:true},
+				{word:'安迅思'},
+				{word:'撮合市场'}
+			]
+		},
+		{
+			txt:'案例',
+			url:'javascript:;',
+			checked:true,
+			child:[
+				{word:'企业碳资产',new:true},
+				{word:'安迅思'},
+				{word:'撮合市场'}
+			]
+		},
+		{
+			txt:'解决方案',
+			url:'javascript:;',
+			checked:true,
+			child:[
+				{word:'企业碳资产',new:true},
+				{word:'安迅思'},
+				{word:'撮合市场'}
+			]
+		},
+		{
+			txt:'开放平台',
+			url:'javascript:;',
+			child:[
+				{word:'企业碳资产',new:true},
+				{word:'安迅思'},
+				{word:'撮合市场'}
+			]
+		},
+		{
+			txt:'合作伙伴',
+			url:'javascript:;',
+			child:[
+				{word:'企业碳资产',new:true},
+				{word:'安迅思'},
+				{word:'撮合市场'}
+			]
+		}
+	];
+	$scope.secData = [
+		{
+			tit:'解决方案1',
+			child:[
+				{word:'解决方案1',selected:true,new:true},
+				{word:'解决方案1'},
+				{word:'解决方案1'},
+				{word:'解决方案1'}
+			]
+		},
+		{
+			tit:'解决方案1',
+			child:[
+				{word:'解决方案1'},
+				{word:'解决方案1'},
+				{word:'解决方案1',new:true},
+				{word:'解决方案1'}
+			]
+		},
+		{
+			tit:'解决方案1',
+			child:[
+				{word:'解决方案1'},
+				{word:'解决方案1',new:true},
+				{word:'解决方案1',new:true},
+				{word:'解决方案1'}
+			]
+		},
+		{
+			tit:'解决方案1',
+			child:[
+				{word:'解决方案1',new:true},
+				{word:'解决方案1'},
+				{word:'解决方案1'},
+				{word:'解决方案1'}
+			]
+		},
+		{
+			tit:'解决方案1',
+			child:[
+				{word:'解决方案1',new:true},
+				{word:'解决方案1'},
+				{word:'解决方案1'},
+				{word:'解决方案1'}
+			]
+		}
+	];
+	$scope.moreData=[
+		{txt:'资讯中心',url:'javascript:;',selected:true},
+		{txt:'应用商店',url:'javascript:;'},
+		{txt:'关于我们',url:'javascript:;'},
+		{txt:'其他解决方案',url:'javascript:;'},
+		{txt:'Q&A',url:'javascript:;'},
+	];
+}]);
